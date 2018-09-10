@@ -2,12 +2,88 @@ package tddc17;
 
 
 import aima.core.environment.liuvacuum.*;
+
 import aima.core.agent.Action;
 import aima.core.agent.AgentProgram;
 import aima.core.agent.Percept;
 import aima.core.agent.impl.*;
 
 import java.util.Random;
+import java.util.Queue;
+import java.util.LinkedList;
+
+/* 
+ * Comments:
+ * 
+ * Using breadth first search seems like a good idea.
+ * The course book says that BFS is both complete and optimal if 
+ * the step cost is constant (which it is).
+ * We should probably modify the BFS to prioritize continuing forward if possible
+ * to minimize turning since a turn does not give us a new square and such is a wasted move if not neccesary.
+ * 
+ * 
+ * The idea is to find the closest unexplored square with the lowest cost (prioritizing moving forward)
+ * and then move there. Every time we bump into something, reset the created BFS-grid and queue and calculate 
+ * a new goal coordinate.
+ * 
+ * We might also need something that understands if we bumped into the outer walls or just a random wall.
+ * To begin with we could solve this by just assuming the grid is 15x15.
+ */
+
+
+//Class to store coordinates nicer
+class Coordinate {
+	public int x;
+	public int y;
+
+	public Coordinate(int x_coord, int y_coord) {
+		x = x_coord;
+		y = y_coord;
+	}
+
+	public int getX() {
+		return this.x;
+	}
+
+	public int getY() {
+		return this.y;
+	}
+}
+
+
+//Class for each square in the grid (these are basically nodes used in the BFS
+class Square {
+	public Coordinate position;
+	public Coordinate parent;
+	public int cost;
+
+	public Square(int x, int y) {
+		this.position = new Coordinate(x, y);
+		this.parent = new Coordinate(-1, -1);
+		this.cost = -1; // Cost ? -1 means the square is unexplored
+	}
+
+	public void setParent(int x, int y) {
+		this.parent = new Coordinate(x, y);
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+	public int getCost() {
+		return this.cost;
+	}
+
+	public Coordinate getParent() {
+		return this.parent;
+	}
+
+	public Coordinate getPosition() {
+		return this.position;
+	}
+}
+
 
 class MyAgentState
 {
@@ -18,15 +94,25 @@ class MyAgentState
 	final int CLEAR 	= 2;
 	final int DIRT		= 3;
 	final int HOME		= 4;
-	final int ACTION_NONE 			= 0;
-	final int ACTION_MOVE_FORWARD 	= 1;
-	final int ACTION_TURN_RIGHT 	= 2;
-	final int ACTION_TURN_LEFT 		= 3;
-	final int ACTION_SUCK	 		= 4;
+	static final int ACTION_NONE 			= 0;
+	static final int ACTION_MOVE_FORWARD 	= 1;
+	static final int ACTION_TURN_RIGHT 		= 2;
+	static final int ACTION_TURN_LEFT 		= 3;
+	static final int ACTION_SUCK	 		= 4;
 
-	public int agent_x_position = 1;
-	public int agent_y_position = 1;
+	public static int maxGridSizeX = 15;
+	public static int maxGridSizeY = 15;
+
+	public Coordinate agent_position = new Coordinate(1,1);
 	public int agent_last_action = ACTION_NONE;
+
+	public Square[][] BFSgrid = new Square[maxGridSizeX+2][maxGridSizeY+2]; //This 2D-array stores all the squares in the search
+	public Queue<Square> BFSqueue = new LinkedList<Square>(); //This is the FIFO-queue for the BFS
+
+	public boolean goHome = false; //This is set when all squares are explored and it is time to go home.
+
+	public Coordinate agent_goal = new Coordinate(-1, -1);
+	public Coordinate home_position = new Coordinate(1, 1);
 
 	public static final int NORTH = 0;
 	public static final int EAST = 1;
@@ -51,16 +137,16 @@ class MyAgentState
 		{
 			switch (agent_direction) {
 			case MyAgentState.NORTH:
-				agent_y_position--;
+				agent_position.y--;
 				break;
 			case MyAgentState.EAST:
-				agent_x_position++;
+				agent_position.x++;
 				break;
 			case MyAgentState.SOUTH:
-				agent_y_position++;
+				agent_position.y++;
 				break;
 			case MyAgentState.WEST:
-				agent_x_position--;
+				agent_position.x--;
 				break;
 			}
 		}
@@ -100,13 +186,8 @@ class MyAgentProgram implements AgentProgram {
 	private Random random_generator = new Random();
 
 	// Here you can define your variables!
-	public int iterationCounter = 1000;
+	public int iterationCounter = 450; //Number of allowed (450 is the maximum according to task nr2).
 	public MyAgentState state = new MyAgentState();
-	public int startState = 2;
-	public int lastBumpDirection = MyAgentState.EAST;
-	public int moveAfterBumpState = 0;
-	public boolean goHome = false;
-
 
 	// moves the Agent to a random start position
 	// uses percepts to update the Agent position - only the position, other percepts are ignored
@@ -131,6 +212,247 @@ class MyAgentProgram implements AgentProgram {
 	}
 
 
+	public void BFS() {
+		Coordinate currentPos = state.agent_position;
+		for(int i = 0; i < MyAgentState.maxGridSizeX+2; i++) {
+			for(int j = 0; j < MyAgentState.maxGridSizeY+2; j++) {
+				state.BFSgrid[i][j] = new Square(i, j);// Fill grid with squares with respective coordinates
+			}
+		}
+		state.BFSqueue.clear(); //clear the queue
+		state.BFSgrid[currentPos.x][currentPos.y].setCost(0);
+		state.BFSqueue.add(state.BFSgrid[currentPos.x][currentPos.y]);
+
+		Coordinate pos;
+
+		while(state.BFSqueue.size() > 0) {
+			Square currentSquare = state.BFSqueue.poll(); //pop from queue
+
+			pos = currentSquare.getPosition();
+
+			int cost = state.BFSgrid[pos.x][pos.y].getCost();
+
+			//If cost of any of the adjacent squares are -1 it is unexplored
+			//The search order is for the moment pretty stupid
+/*
+			Coordinate directionVector = new Coordinate(0,0);
+
+				switch(state.agent_direction)
+				{
+				case 0:
+					directionVector.x = 0;
+					directionVector.y = -1;
+					break;
+				case 1:
+					directionVector.x = 1;
+					directionVector.y = 0;
+				case 2:
+					directionVector.x = 0;
+					directionVector.y = 1;
+				case 3:
+					directionVector.x = -1;
+					directionVector.y = 0;
+				}
+*/
+
+			if(pos.x > 0 || pos.y > 0) { //If it is an accepted coordinate
+
+				/*Coordinate newPos = new Coordinate(pos.x+directionVector.x, pos.y+directionVector.y); //Adjacent prio
+				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x < 16)
+				{
+					if(state.world[newPos.x][newPos.y] != state.WALL)
+					{
+						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
+						{
+							state.agent_goal = newPos;
+							return;
+						}
+						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+					}
+				}
+				*/
+				Coordinate newPos = new Coordinate(pos.x+1, pos.y); //Adjacent east
+				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x < MyAgentState.maxGridSizeX+1)
+				{
+					if(state.world[newPos.x][newPos.y] != state.WALL)
+					{
+						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
+						{
+							state.agent_goal = newPos;
+							return;
+						}
+						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+					}
+				}
+				newPos = new Coordinate(pos.x, pos.y+1); //Adjacent south
+				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.y < MyAgentState.maxGridSizeY+1)
+				{
+					if(state.world[newPos.x][newPos.y] != state.WALL)
+					{
+						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
+						{
+							state.agent_goal = newPos;
+							return;
+						}
+						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+					}
+				}
+				newPos = new Coordinate(pos.x-1, pos.y); //Adjacent west
+				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x > 0)
+				{
+					if(state.world[newPos.x][newPos.y] != state.WALL)
+					{
+						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
+						{
+							state.agent_goal = newPos;
+							return;
+						}
+						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+					}
+				}
+				newPos = new Coordinate(pos.x, pos.y-1); //Adjacent north
+				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.y > 0)
+				{
+					if(state.world[newPos.x][newPos.y] != state.WALL)
+					{
+						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
+						{
+							state.agent_goal = newPos;
+							return;
+						}
+						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+					}
+				}
+			}
+		}
+
+		//All squares are explored, go home.
+		state.agent_goal = state.home_position;
+		state.goHome = true;
+	}
+
+	//This function moves the robot. We could improve this by checking the direction we are facing first and
+	//decide which direction we should move first according to that
+	public Action move(Coordinate pos) {
+		if(state.agent_position.y < pos.y) //If we are above the goal position
+		{
+			switch(state.agent_direction) {
+			case MyAgentState.SOUTH:
+				return updateMovement(MyAgentState.ACTION_MOVE_FORWARD);
+			case MyAgentState.WEST:
+				return updateMovement(MyAgentState.ACTION_TURN_LEFT);
+			case MyAgentState.EAST:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			default:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			}
+		}
+		if(state.agent_position.y > pos.y) //If we are below the goal position
+		{
+			switch(state.agent_direction) {
+			case MyAgentState.NORTH:
+				return updateMovement(MyAgentState.ACTION_MOVE_FORWARD);
+			case MyAgentState.EAST:
+				return updateMovement(MyAgentState.ACTION_TURN_LEFT);
+			case MyAgentState.WEST:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			default:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			}
+		}
+		if(state.agent_position.x < pos.x) //If we are to the left of the goal position
+		{
+			switch(state.agent_direction) {
+			case MyAgentState.EAST:
+				return updateMovement(MyAgentState.ACTION_MOVE_FORWARD);
+			case MyAgentState.SOUTH:
+				return updateMovement(MyAgentState.ACTION_TURN_LEFT);
+			case MyAgentState.NORTH:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			default:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			}
+		}
+		if(state.agent_position.x > pos.x) //If we are to the right of the goal position
+		{
+			switch(state.agent_direction) {
+			case MyAgentState.WEST:
+				return updateMovement(MyAgentState.ACTION_MOVE_FORWARD);
+			case MyAgentState.NORTH:
+				return updateMovement(MyAgentState.ACTION_TURN_LEFT);
+			case MyAgentState.SOUTH:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			default:
+				return updateMovement(MyAgentState.ACTION_TURN_RIGHT);
+			}
+		}
+
+		return NoOpAction.NO_OP; //THIS SHOULD NOT HAPPEN
+	}
+
+	public Action updateMovement(int movement) {
+		switch(movement) {
+		case MyAgentState.ACTION_MOVE_FORWARD:
+			state.agent_last_action = MyAgentState.ACTION_MOVE_FORWARD;
+			return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
+		case MyAgentState.ACTION_TURN_RIGHT:
+			state.agent_direction = ((state.agent_direction+1) % 4);
+			state.agent_last_action = MyAgentState.ACTION_TURN_RIGHT;
+			return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
+		case MyAgentState.ACTION_TURN_LEFT:
+			state.agent_direction = ((state.agent_direction-1) % 4);
+			if (state.agent_direction<0) 
+				state.agent_direction +=4;
+			state.agent_last_action = MyAgentState.ACTION_TURN_LEFT;
+			return LIUVacuumEnvironment.ACTION_TURN_LEFT;
+		case MyAgentState.ACTION_SUCK:
+			state.agent_last_action = MyAgentState.ACTION_SUCK;
+			return LIUVacuumEnvironment.ACTION_SUCK;
+		default:
+			state.agent_last_action=MyAgentState.ACTION_NONE;
+			return NoOpAction.NO_OP;
+		}
+	}
+
+	//Function that returns the next move operation
+	public Action moveToGoal() {
+		Coordinate currentPos = state.agent_position;
+		Coordinate goalPos = state.agent_goal;
+
+		//If we are at the goal
+		if(currentPos.x == goalPos.x && currentPos.y == goalPos.y) {
+			if(state.goHome) {
+				return NoOpAction.NO_OP;  //All square are clean and we are at home position = FINISHED
+			}
+
+			BFS();//Run the BFS function to calculate the new BFS-grid and find new goal
+			goalPos = state.agent_goal; //update local goal position
+		}
+
+		Coordinate parentPos = state.BFSgrid[goalPos.x][goalPos.y].getParent(); //
+		Coordinate parentPos_last = goalPos;
+
+		while(true) { //This loops through the path from the goal position to the current position to know what is the next step
+			if(parentPos.x == currentPos.x && parentPos.y == currentPos.y)
+			{
+				return move(parentPos_last);
+			}
+
+			parentPos_last = parentPos;
+			parentPos = state.BFSgrid[parentPos_last.x][parentPos_last.y].getParent();
+		}
+	}
+
 	@Override
 	public Action execute(Percept percept) {
 
@@ -149,12 +471,13 @@ class MyAgentProgram implements AgentProgram {
 		// This example agent program will update the internal agent state while only moving forward.
 		// START HERE - code below should be modified!
 
-		System.out.println("x=" + state.agent_x_position);
-		System.out.println("y=" + state.agent_y_position);
+		System.out.println("x=" + state.agent_position.x);
+		System.out.println("y=" + state.agent_position.y);
 		System.out.println("dir=" + state.agent_direction);
 
 
 		iterationCounter--;
+		System.out.println("Actions: " + iterationCounter);
 
 		if (iterationCounter==0)
 			return NoOpAction.NO_OP;
@@ -170,134 +493,49 @@ class MyAgentProgram implements AgentProgram {
 		if (bump) {
 			switch (state.agent_direction) {
 			case MyAgentState.NORTH:
-				state.updateWorld(state.agent_x_position,state.agent_y_position-1,state.WALL);
+				state.updateWorld(state.agent_position.x,state.agent_position.y-1,state.WALL);
 				break;
 			case MyAgentState.EAST:
-				state.updateWorld(state.agent_x_position+1,state.agent_y_position,state.WALL);
+				state.updateWorld(state.agent_position.x+1,state.agent_position.y,state.WALL);
 				break;
 			case MyAgentState.SOUTH:
-				state.updateWorld(state.agent_x_position,state.agent_y_position+1,state.WALL);
+				state.updateWorld(state.agent_position.x,state.agent_position.y+1,state.WALL);
 				break;
 			case MyAgentState.WEST:
-				state.updateWorld(state.agent_x_position-1,state.agent_y_position,state.WALL);
+				state.updateWorld(state.agent_position.x-1,state.agent_position.y,state.WALL);
 				break;
 			}
 		}
 		if (dirt)
-			state.updateWorld(state.agent_x_position,state.agent_y_position,state.DIRT);
+			state.updateWorld(state.agent_position.x,state.agent_position.y,state.DIRT);
 		else
-			state.updateWorld(state.agent_x_position,state.agent_y_position,state.CLEAR);
+			state.updateWorld(state.agent_position.x,state.agent_position.y,state.CLEAR);
 
 		state.printWorldDebug();
 
 
-		// Next action selection based on the percept value
-		System.out.println(moveAfterBumpState);
-		switch(startState){
-		case 2:
-
-			if(state.agent_direction != MyAgentState.SOUTH)
-			{
-				state.agent_direction = ((state.agent_direction+1) % 4);
-				state.agent_last_action = state.ACTION_TURN_RIGHT;
-				return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-			} else {
-				if (bump)
-				{
-					startState--;
-					state.agent_direction = ((state.agent_direction-1) % 4);
-					if (state.agent_direction<0) 
-						state.agent_direction +=4;
-					state.agent_last_action = state.ACTION_TURN_LEFT;
-					return LIUVacuumEnvironment.ACTION_TURN_LEFT;
-				}
-				state.agent_last_action=state.ACTION_MOVE_FORWARD;
-				return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
-			}
-		case 1:
-			if (bump)
-			{
-				startState--;
-				state.agent_direction = ((state.agent_direction-1) % 4);
-				if (state.agent_direction<0) 
-					state.agent_direction +=4;
-				state.agent_last_action = state.ACTION_TURN_LEFT;
-				return LIUVacuumEnvironment.ACTION_TURN_LEFT;
-			}
-			state.agent_last_action=state.ACTION_MOVE_FORWARD;
-			return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
-		case 0:
-			if(goHome && home)
-			{
-				state.agent_last_action=state.ACTION_NONE;
-				return NoOpAction.NO_OP;
-			}
-			if (dirt)
-			{
-				System.out.println("DIRT -> choosing SUCK action!");
-				state.agent_last_action=state.ACTION_SUCK;
-				return LIUVacuumEnvironment.ACTION_SUCK;
-			} 
-			if (bump)
-			{
-				if(state.agent_direction == MyAgentState.WEST)
-				{
-					goHome = true;
-					moveAfterBumpState = 0;
-					state.agent_direction = ((state.agent_direction+1) % 4);
-					state.agent_last_action = state.ACTION_TURN_RIGHT;
-					return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-				}
-				
-				moveAfterBumpState = 2;
-				if(state.agent_direction == MyAgentState.NORTH)
-				{
-					lastBumpDirection = MyAgentState.NORTH;
-					state.agent_direction = ((state.agent_direction-1) % 4);
-					if (state.agent_direction<0) 
-						state.agent_direction +=4;
-					state.agent_last_action = state.ACTION_TURN_LEFT;
-					return LIUVacuumEnvironment.ACTION_TURN_LEFT;
-				}
-				else
-				{
-					lastBumpDirection = MyAgentState.SOUTH;
-					state.agent_direction = ((state.agent_direction+1) % 4);
-					state.agent_last_action = state.ACTION_TURN_RIGHT;
-					return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-				}
-			}
-			if(moveAfterBumpState == 2){
-				moveAfterBumpState--;
-				state.agent_last_action=state.ACTION_MOVE_FORWARD;
-				return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
-			} else if(moveAfterBumpState == 1){
-				moveAfterBumpState--;
-				if(lastBumpDirection == MyAgentState.NORTH){
-					state.agent_direction = ((state.agent_direction-1) % 4);
-					if (state.agent_direction<0) 
-						state.agent_direction +=4;
-					state.agent_last_action = state.ACTION_TURN_LEFT;
-					return LIUVacuumEnvironment.ACTION_TURN_LEFT;
-				}
-				else {
-					state.agent_direction = ((state.agent_direction+1) % 4);
-					state.agent_last_action = state.ACTION_TURN_RIGHT;
-					return LIUVacuumEnvironment.ACTION_TURN_RIGHT;
-				}
-			}
-			else
-			{
-				state.agent_last_action=state.ACTION_MOVE_FORWARD;
-				return LIUVacuumEnvironment.ACTION_MOVE_FORWARD;
-			}
-		default:
-			state.agent_last_action=state.ACTION_NONE;
-			return NoOpAction.NO_OP;
+		// Below this is basically the main function
+		if(state.agent_goal.x == -1 && state.agent_goal.y == -1) //This is just the first goal set in the setup
+		{
+			//First goal
+			System.out.println("First goal");
+			BFS();
 		}
+		// Next action selection based on the percept value
+		if (dirt)
+		{
+			System.out.println("DIRT -> choosing SUCK action!");
+			return updateMovement(MyAgentState.ACTION_SUCK);
+		} 
+		if (bump) // Everytime we bump, reset and create a new BFS for the closest unexplored square.
+		{
+			BFS();
+		}
+
+		return moveToGoal(); //Function that calculates the move according to the BFS
+
 	}
 }
-
 
 public class MyVacuumAgent extends AbstractAgent {
 	public MyVacuumAgent() {
