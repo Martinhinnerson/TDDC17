@@ -220,14 +220,13 @@ class MyAgentProgram implements AgentProgram {
 			}
 		}
 		state.BFSqueue.clear(); //clear the queue
-
 		state.BFSgrid[currentPos.x][currentPos.y].setCost(0);
 		state.BFSqueue.add(state.BFSgrid[currentPos.x][currentPos.y]);
 
 		Coordinate pos;
 
 		while(state.BFSqueue.size() > 0) {
-			Square currentSquare = state.BFSqueue.poll();
+			Square currentSquare = state.BFSqueue.poll(); //pop from queue
 
 			pos = currentSquare.getPosition();
 
@@ -306,6 +305,8 @@ class MyAgentProgram implements AgentProgram {
 		state.goHome = true;
 	}
 
+	//This function moves the robot. We could improve this by checking the direction we are facing first and
+	//decide which direction we should move first according to that
 	public Action move(Coordinate pos) {
 		if(state.agent_position.y < pos.y) //If we are above the goal position
 		{
@@ -387,6 +388,7 @@ class MyAgentProgram implements AgentProgram {
 		}
 	}
 
+	//Function that returns the next move operation
 	public Action moveToGoal() {
 		Coordinate currentPos = state.agent_position;
 		Coordinate goalPos = state.agent_goal;
@@ -404,7 +406,7 @@ class MyAgentProgram implements AgentProgram {
 		Coordinate parentPos = state.BFSgrid[goalPos.x][goalPos.y].getParent(); //
 		Coordinate parentPos_last = goalPos;
 
-		while(true) {
+		while(true) { //This loops through the path from the goal position to the current position to know what is the next step
 			if(parentPos.x == currentPos.x && parentPos.y == currentPos.y)
 			{
 				return move(parentPos_last);
@@ -413,7 +415,6 @@ class MyAgentProgram implements AgentProgram {
 			parentPos_last = parentPos;
 			parentPos = state.BFSgrid[parentPos_last.x][parentPos_last.y].getParent();
 		}
-
 	}
 
 	@Override
@@ -476,7 +477,8 @@ class MyAgentProgram implements AgentProgram {
 		state.printWorldDebug();
 
 
-		if(state.agent_goal.x == -1 && state.agent_goal.y == -1)
+		// Below this is basically the main function
+		if(state.agent_goal.x == -1 && state.agent_goal.y == -1) //This is jsut the first goal set in the setup
 		{
 			//First goal
 			System.out.println("First goal");
@@ -488,12 +490,12 @@ class MyAgentProgram implements AgentProgram {
 			System.out.println("DIRT -> choosing SUCK action!");
 			return updateMovement(MyAgentState.ACTION_SUCK);
 		} 
-		if (bump)
+		if (bump) // Everytime we bump, reset and create a new BFS for the closest unexplored square.
 		{
 			BFS();
 		}
 
-		return moveToGoal();
+		return moveToGoal(); //Function that calculates the move according to the BFS
 
 	}
 }
