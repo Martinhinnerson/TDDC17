@@ -60,7 +60,7 @@ class Square {
 	public Square(int x, int y) {
 		this.position = new Coordinate(x, y);
 		this.parent = new Coordinate(-1, -1);
-		this.cost = -1; // Cost ? -1 means the square is unexplored
+		this.cost = -1; // Cost = -1 means the square is unexplored
 	}
 
 	public void setParent(int x, int y) {
@@ -106,7 +106,7 @@ class MyAgentState
 	public Coordinate agent_position = new Coordinate(1,1);
 	public int agent_last_action = ACTION_NONE;
 
-	public Square[][] BFSgrid = new Square[maxGridSizeX+2][maxGridSizeY+2]; //This 2D-array stores all the squares in the search
+	public Square[][] BFSgrid = new Square[maxGridSizeX+2][maxGridSizeY+2]; //This 2D-array stores all the squares in the search function
 	public Queue<Square> BFSqueue = new LinkedList<Square>(); //This is the FIFO-queue for the BFS
 
 	public boolean goHome = false; //This is set when all squares are explored and it is time to go home.
@@ -186,7 +186,7 @@ class MyAgentProgram implements AgentProgram {
 	private Random random_generator = new Random();
 
 	// Here you can define your variables!
-	public int iterationCounter = 450; //Number of allowed (450 is the maximum according to task nr2).
+	public int iterationCounter = 450; //Number of allowed actions (450 is the maximum according to task nr2 for 15x15 grid).
 	public MyAgentState state = new MyAgentState();
 
 	// moves the Agent to a random start position
@@ -212,6 +212,7 @@ class MyAgentProgram implements AgentProgram {
 	}
 
 
+	//Main search function that decides what to do next
 	public void BFS() {
 		Coordinate currentPos = state.agent_position;
 		for(int i = 0; i < MyAgentState.maxGridSizeX+2; i++) {
@@ -233,110 +234,72 @@ class MyAgentProgram implements AgentProgram {
 			int cost = state.BFSgrid[pos.x][pos.y].getCost();
 
 			//If cost of any of the adjacent squares are -1 it is unexplored
-			//The search order is for the moment pretty stupid
-/*
-			Coordinate directionVector = new Coordinate(0,0);
+			//The search order is for the moment fixed
 
-				switch(state.agent_direction)
+			Coordinate newPos = new Coordinate(pos.x+1, pos.y); //Adjacent east
+			if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x < MyAgentState.maxGridSizeX+1)
+			{
+				if(state.world[newPos.x][newPos.y] != state.WALL)
 				{
-				case 0:
-					directionVector.x = 0;
-					directionVector.y = -1;
-					break;
-				case 1:
-					directionVector.x = 1;
-					directionVector.y = 0;
-				case 2:
-					directionVector.x = 0;
-					directionVector.y = 1;
-				case 3:
-					directionVector.x = -1;
-					directionVector.y = 0;
-				}
-*/
-
-			if(pos.x > 0 || pos.y > 0) { //If it is an accepted coordinate
-
-				/*Coordinate newPos = new Coordinate(pos.x+directionVector.x, pos.y+directionVector.y); //Adjacent prio
-				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x < 16)
-				{
-					if(state.world[newPos.x][newPos.y] != state.WALL)
+					state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+					state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+					if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
 					{
-						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
-						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
-						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
-						{
-							state.agent_goal = newPos;
-							return;
-						}
-						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+						state.agent_goal = newPos;
+						return;
 					}
+					state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
 				}
-				*/
-				Coordinate newPos = new Coordinate(pos.x+1, pos.y); //Adjacent east
-				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x < MyAgentState.maxGridSizeX+1)
+			}
+			newPos = new Coordinate(pos.x, pos.y+1); //Adjacent south
+			if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.y < MyAgentState.maxGridSizeY+1)
+			{
+				if(state.world[newPos.x][newPos.y] != state.WALL) //If it't not a wall
 				{
-					if(state.world[newPos.x][newPos.y] != state.WALL)
+					state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1); //Add one to the cost for each time we go deeper in the net
+					state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+					if(state.world[newPos.x][newPos.y] == state.UNKNOWN) //If we have found an unknown square, set as goal and return
 					{
-						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
-						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
-						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
-						{
-							state.agent_goal = newPos;
-							return;
-						}
-						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+						state.agent_goal = newPos;
+						return;
 					}
+					state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
 				}
-				newPos = new Coordinate(pos.x, pos.y+1); //Adjacent south
-				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.y < MyAgentState.maxGridSizeY+1)
+			}
+			newPos = new Coordinate(pos.x-1, pos.y); //Adjacent west
+			if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x > 0)
+			{
+				if(state.world[newPos.x][newPos.y] != state.WALL)
 				{
-					if(state.world[newPos.x][newPos.y] != state.WALL)
+					state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+					state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+					if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
 					{
-						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
-						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
-						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
-						{
-							state.agent_goal = newPos;
-							return;
-						}
-						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+						state.agent_goal = newPos;
+						return;
 					}
+					state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
 				}
-				newPos = new Coordinate(pos.x-1, pos.y); //Adjacent west
-				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.x > 0)
+			}
+			newPos = new Coordinate(pos.x, pos.y-1); //Adjacent north
+			if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.y > 0)
+			{
+				if(state.world[newPos.x][newPos.y] != state.WALL)
 				{
-					if(state.world[newPos.x][newPos.y] != state.WALL)
+					state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
+					state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
+					if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
 					{
-						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
-						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
-						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
-						{
-							state.agent_goal = newPos;
-							return;
-						}
-						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
+						state.agent_goal = newPos;
+						return;
 					}
-				}
-				newPos = new Coordinate(pos.x, pos.y-1); //Adjacent north
-				if(state.BFSgrid[newPos.x][newPos.y].getCost() == -1 && newPos.y > 0)
-				{
-					if(state.world[newPos.x][newPos.y] != state.WALL)
-					{
-						state.BFSgrid[newPos.x][newPos.y].setCost(cost + 1);
-						state.BFSgrid[newPos.x][newPos.y].setParent(pos.x, pos.y);
-						if(state.world[newPos.x][newPos.y] == state.UNKNOWN)
-						{
-							state.agent_goal = newPos;
-							return;
-						}
-						state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
-					}
+					state.BFSqueue.add(state.BFSgrid[newPos.x][newPos.y]);
 				}
 			}
 		}
 
-		//All squares are explored, go home.
+		//We will only get here when we can't find any unknown squares
+		//Time to go home
 		state.agent_goal = state.home_position;
 		state.goHome = true;
 	}
@@ -400,6 +363,7 @@ class MyAgentProgram implements AgentProgram {
 		return NoOpAction.NO_OP; //THIS SHOULD NOT HAPPEN
 	}
 
+	//This function just makes the action calls cleaner and handles the direction and movement update.
 	public Action updateMovement(int movement) {
 		switch(movement) {
 		case MyAgentState.ACTION_MOVE_FORWARD:
@@ -425,10 +389,11 @@ class MyAgentProgram implements AgentProgram {
 	}
 
 	//Function that returns the next move operation
-	public Action moveToGoal() {
+	public Action findNextMove() {
 		Coordinate currentPos = state.agent_position;
 		Coordinate goalPos = state.agent_goal;
 
+		
 		//If we are at the goal
 		if(currentPos.x == goalPos.x && currentPos.y == goalPos.y) {
 			if(state.goHome) {
@@ -447,7 +412,6 @@ class MyAgentProgram implements AgentProgram {
 			{
 				return move(parentPos_last);
 			}
-
 			parentPos_last = parentPos;
 			parentPos = state.BFSgrid[parentPos_last.x][parentPos_last.y].getParent();
 		}
@@ -515,14 +479,12 @@ class MyAgentProgram implements AgentProgram {
 
 
 		// Below this is basically the main function
+		
 		if(state.agent_goal.x == -1 && state.agent_goal.y == -1) //This is just the first goal set in the setup
 		{
-			//First goal
-			System.out.println("First goal");
 			BFS();
 		}
-		// Next action selection based on the percept value
-		if (dirt)
+		if (dirt) //If dirt, suck it
 		{
 			System.out.println("DIRT -> choosing SUCK action!");
 			return updateMovement(MyAgentState.ACTION_SUCK);
@@ -532,7 +494,7 @@ class MyAgentProgram implements AgentProgram {
 			BFS();
 		}
 
-		return moveToGoal(); //Function that calculates the move according to the BFS
+		return findNextMove(); //Function that calculates the move according to the BFS
 
 	}
 }
