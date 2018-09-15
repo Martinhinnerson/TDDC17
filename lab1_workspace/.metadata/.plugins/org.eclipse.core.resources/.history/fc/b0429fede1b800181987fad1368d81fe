@@ -388,6 +388,35 @@ class MyAgentProgram implements AgentProgram {
 		}
 	}
 
+	//Function that returns the next move operation
+	public Action findNextMove() {
+		Coordinate currentPos = state.agent_position;
+		Coordinate goalPos = state.agent_goal;
+
+		
+		//If we are at the goal
+		if(currentPos.x == goalPos.x && currentPos.y == goalPos.y) {
+			if(state.goHome) {
+				return NoOpAction.NO_OP;  //All square are clean and we are at home position = FINISHED
+			}
+
+			BFS();//Run the BFS function to calculate the new BFS-grid and find new goal
+			goalPos = state.agent_goal; //update local goal position
+		}
+
+		Coordinate parentPos = state.BFSgrid[goalPos.x][goalPos.y].getParent(); //
+		Coordinate parentPos_last = goalPos;
+
+		while(true) { //This loops through the path from the goal position to the current position to know what is the next step
+			if(parentPos.x == currentPos.x && parentPos.y == currentPos.y)
+			{
+				return move(parentPos_last);
+			}
+			parentPos_last = parentPos;
+			parentPos = state.BFSgrid[parentPos_last.x][parentPos_last.y].getParent();
+		}
+	}
+
 	@Override
 	public Action execute(Percept percept) {
 
@@ -465,31 +494,8 @@ class MyAgentProgram implements AgentProgram {
 			BFS();
 		}
 
-		
-		Coordinate currentPos = state.agent_position;
-		Coordinate goalPos = state.agent_goal;
-		
-		//If we are at the goal
-		if(currentPos.x == goalPos.x && currentPos.y == goalPos.y) {
-			if(state.goHome) {
-				return NoOpAction.NO_OP;  //All square are clean and we are at home position = FINISHED
-			}
+		return findNextMove(); //Function that calculates the move according to the BFS
 
-			BFS();//Run the BFS function to calculate the new BFS-grid and find new goal
-			goalPos = state.agent_goal; //update local goal position
-		}
-
-		Coordinate parentPos = state.BFSgrid[goalPos.x][goalPos.y].getParent(); //
-		Coordinate parentPos_last = goalPos;
-
-		while(true) { //This loops through the path from the goal position to the current position to know what is the next step
-			if(parentPos.x == currentPos.x && parentPos.y == currentPos.y)
-			{
-				return move(parentPos_last);
-			}
-			parentPos_last = parentPos;
-			parentPos = state.BFSgrid[parentPos_last.x][parentPos_last.y].getParent();
-		}
 	}
 }
 
