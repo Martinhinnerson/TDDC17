@@ -111,7 +111,7 @@ class MyAgentState
 
 	public boolean goHome = false; //This is set when all squares are explored and it is time to go home.
 
-	public Coordinate agent_goal = new Coordinate(-1, -1);
+	public Coordinate agent_goal = new Coordinate(-1, -1); //initialized to -1, -1 because we don't know the first goal
 	public Coordinate home_position = new Coordinate(1, 1);
 
 	public static final int NORTH = 0;
@@ -449,7 +449,7 @@ class MyAgentProgram implements AgentProgram {
 		state.printWorldDebug();
 
 
-		// Below this is basically the main function
+		// Below this is the main function
 		
 		if(state.agent_goal.x == -1 && state.agent_goal.y == -1) //This is just the first goal set in the setup
 		{
@@ -466,6 +466,7 @@ class MyAgentProgram implements AgentProgram {
 		}
 
 		
+		//Just local instances for below
 		Coordinate currentPos = state.agent_position;
 		Coordinate goalPos = state.agent_goal;
 		
