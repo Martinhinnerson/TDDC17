@@ -47,24 +47,33 @@ public class CustomGraphSearch implements SearchObject {
 			SearchNode node = frontier.removeFirst();
 			explored.add(node);
 			
-			if(p.isGoalState(node.getState())){
+			/*if(p.isGoalState(node.getState())){ //I moved this to the for loop instead
 				path = node.getPathFromRoot();
 				return path;
-			}
+			}*/
 			
 			ArrayList<GridPos> childStates = p.getReachableStatesFrom(node.getState());
 			
 			for(int i = 0; i < childStates.size(); i++){
 				SearchNode childNode = new SearchNode(childStates.get(i), node);
 				if(!explored.contains(childNode)){
+
+					if(p.isGoalState(childStates.get(i))) //I only added this if statement
+					{
+						path = childNode.getPathFromRoot();
+						return path;
+					}
+
 					if(insertFront){
-						
 						System.out.println("Inserting in front");
 						frontier.addNodeToFront(new SearchNode(childNode.getState() , node));	
-					}else {
+					}
+					else {
 						frontier.addNodeToBack(new SearchNode(childNode.getState() , node));
 						System.out.println("Inserting in back");
 					}
+
+					
 				}
 			}
 
