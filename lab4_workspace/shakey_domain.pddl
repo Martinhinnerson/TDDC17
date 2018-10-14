@@ -1,5 +1,6 @@
 ;Domain Definition
 
+
 (define (domain shakeys_world)
 	(:requirements :strips)
 
@@ -36,7 +37,7 @@
 	  	(can_move ?who)
 	  	(on_floor ?who)
 	  	(in ?item ?from)
-	  	(can_be_pushed item)
+	  	(can_be_pushed ?item)
 	  	(wide ?door))
 	  :effect (and(in ?who ?to)
 	  	(not(in ?who ?from))
