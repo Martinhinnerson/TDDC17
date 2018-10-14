@@ -2,16 +2,14 @@
 	
   (:domain shakeys_world)
 
-  (:objects
-    room1 room2 room3 door1 door2 door3 switch1 switch2 switch3 shakey arm1 arm2 box toy
-  )
+  (:objects room1 room2 room3 door1 door2 door3 switch1 switch2 switch3 shakey arm1 arm2 box toy)
 
   (:init
     (adjacent room1 room2 door1)
     (adjacent room2 room1 door1)
     (adjacent room2 room3 door2)
-    (adjacent room3 room2 door3)
-    (adjacent room2 room3 door2)
+    (adjacent room2 room3 door3)
+    (adjacent room3 room2 door2)
     (adjacent room3 room2 door3)
   	
   	(wide door1)
@@ -27,22 +25,21 @@
 	
 	(in shakey room1)
 	(can_move shakey)
+        (on_floor shakey)
 	
 	(arm arm1)
 	(not(used arm1))
 	(arm arm2)
 	(not(used arm2))
 
-	(in box room1)
+	(in box room3)
 	(can_be_pushed box)
 	(can_be_climbed box)
 
-	(in toy room3)
+	(in toy room1)
 	(can_be_carried toy)
   ) 
 
-  (:goal (or 
-  	(carry toy arm1)
-  	(carry toy arm2))
-
-  )
+  (:goal (in toy room3)
+    )
+)

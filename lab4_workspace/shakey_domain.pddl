@@ -10,31 +10,33 @@
 	(:predicates
 
 		;defines world
-		(adjacent ?room_1 ?room_2 ?door)
+		(adjacent ?room1 ?room2 ?door)
 		(wide ?door)
 		(can_move ?object)
 		(can_be_switched ?object)
 		(can_be_pushed ?item)
 		(can_be_climbed ?item)
 		(can_be_carried ?item)
-
-		;defnies shakey
+                (turned_on ?light)
+                
+		;defines shakey
 		(arm ?arm)
 		(used ?arm)
 		(carry ?item ?arm)
-		(turned_on ?light)
 		(on_floor ?who)
 		(in ?something ?room)
-		)
+         )
 
 	;Define actions
 
+        
 	(:action move
-	  :parameters (?who ?item ?from ?to ?door)
+	  :parameters (?who ?from ?to ?door)
 	  :precondition (and 
 	  	(adjacent ?from ?to ?door)
 	  	(in ?who ?from)
 	  	(can_move ?who)
+<<<<<<< HEAD
 	  	(on_floor ?who)
 	  	(in ?item ?from)
 	  	(can_be_pushed ?item)
@@ -43,6 +45,12 @@
 	  	(not(in ?who ?from))
 	  	(in ?item ?to)
 	  	(not(in ?item ?from)))
+=======
+	  	(on_floor ?who))
+	  :effect (and
+                (in ?who ?to)
+	  	(not(in ?who ?from)))
+>>>>>>> f59b7d127af2aa9c8fc7a372c279f01200cbcdc1
 	  )
 
 	(:action climb_up
@@ -69,6 +77,7 @@
 	  :precondition (and 
 	  	(in ?who ?room)
 	  	(in ?light ?room)
+                (can_move ?who)
 	  	(can_be_switched ?light)
 	  	(not(turned_on ?light))
 	  	(not(on_floor ?who)))

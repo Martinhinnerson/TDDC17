@@ -1,0 +1,1385 @@
+{"act": "begin_group", "ts": 0}
+{"act": "open_list_sorting", "key_list": ["h_SINGLE", "h_(", "h_goal_count", "h_INSERTION_ORDER", "h_)"]}
+{"ts":0, "act": "state_update", "state_id": 0, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "g": -1, "real_g": -1}
+{"ts": 0, "act": "evaluated_states", "state_id": 0, "preferred": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 0}
+{"ts":0, "act": "state_update", "state_id": 0, "h_goal_count": 1}
+{"ts": 0, "act": "evaluated_heuristics", "count": 1}
+{"act": "preferred_heuristics", "key_list": []}
+{"act": "main_heuristic", "target": "h_goal_count"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 1}
+{"ts":1, "act": "state_update", "state_id": 0, "g": 0, "real_g": 0}
+{"ts": 1, "act": "expanded_states", "state_id": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 1}
+{"ts":1, "act": "state_update", "state_id": 1, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [0, "move shakey room1 room2 door1", 1]}
+{"ts": 1, "act": "generated_states", "state_id": 0, "op": "move shakey room1 room2 door1"}
+{"ts":1, "act": "state_update", "state_id": 1, "g": -1, "real_g": -1}
+{"ts": 1, "act": "evaluated_states", "state_id": 1, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 1}
+{"ts":1, "act": "state_update", "state_id": 1, "h_goal_count": 1}
+{"ts": 1, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 1, "g": 1, "real_g": 1}
+{"ts": 2, "act": "expanded_states", "state_id": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 0, "new_parent": [1, "move shakey room2 room1 door1", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "move shakey room2 room1 door1"}
+{"ts":2, "act": "state_update", "state_id": 2, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [1, "move shakey room2 room3 door2", 1]}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "move shakey room2 room3 door2"}
+{"ts":2, "act": "state_update", "state_id": 2, "g": -1, "real_g": -1}
+{"ts": 2, "act": "evaluated_states", "state_id": 2, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 2}
+{"ts":2, "act": "state_update", "state_id": 2, "h_goal_count": 1}
+{"ts": 2, "act": "evaluated_heuristics", "count": 1}
+{"ts": 2, "act": "generated_states", "state_id": 1, "op": "move shakey room2 room3 door3"}
+{"ts":2, "act": "state_update", "state_id": 2, "g": 2, "real_g": 2}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts": 3, "act": "expanded_states", "state_id": 2}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 3, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [2, "climb_up box shakey room3", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 2, "op": "climb_up box shakey room3"}
+{"ts":3, "act": "state_update", "state_id": 3, "g": -1, "real_g": -1}
+{"ts": 3, "act": "evaluated_states", "state_id": 3, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 3, "h_goal_count": 1}
+{"ts": 3, "act": "evaluated_heuristics", "count": 1}
+{"ts":3, "act": "state_update", "state_id": 4, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [2, "push shakey room3 room2 door3 box", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 2, "op": "push shakey room3 room2 door3 box"}
+{"ts":3, "act": "state_update", "state_id": 4, "g": -1, "real_g": -1}
+{"ts": 3, "act": "evaluated_states", "state_id": 4, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 3}
+{"ts":3, "act": "state_update", "state_id": 4, "h_goal_count": 1}
+{"ts": 3, "act": "evaluated_heuristics", "count": 1}
+{"ts":3, "act": "state_update", "state_id": 1, "new_parent": [2, "move shakey room3 room2 door2", 1]}
+{"ts": 3, "act": "generated_states", "state_id": 2, "op": "move shakey room3 room2 door2"}
+{"ts": 3, "act": "generated_states", "state_id": 2, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 4}
+{"ts":4, "act": "state_update", "state_id": 3, "g": 3, "real_g": 3}
+{"ts": 4, "act": "expanded_states", "state_id": 3}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 4}
+{"ts":4, "act": "state_update", "state_id": 2, "new_parent": [3, "climb_down shakey", 1]}
+{"ts": 4, "act": "generated_states", "state_id": 3, "op": "climb_down shakey"}
+{"ts":4, "act": "state_update", "state_id": 5, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [3, "switch_on switch3 shakey room3", 1]}
+{"ts": 4, "act": "generated_states", "state_id": 3, "op": "switch_on switch3 shakey room3"}
+{"ts":4, "act": "state_update", "state_id": 5, "g": -1, "real_g": -1}
+{"ts": 4, "act": "evaluated_states", "state_id": 5, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 4}
+{"ts":4, "act": "state_update", "state_id": 5, "h_goal_count": 1}
+{"ts": 4, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 4, "g": 3, "real_g": 3}
+{"ts": 5, "act": "expanded_states", "state_id": 4}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 6, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [4, "climb_up box shakey room2", 1]}
+{"ts": 5, "act": "generated_states", "state_id": 4, "op": "climb_up box shakey room2"}
+{"ts":5, "act": "state_update", "state_id": 6, "g": -1, "real_g": -1}
+{"ts": 5, "act": "evaluated_states", "state_id": 6, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 6, "h_goal_count": 1}
+{"ts": 5, "act": "evaluated_heuristics", "count": 1}
+{"ts":5, "act": "state_update", "state_id": 7, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [4, "push shakey room2 room1 door1 box", 1]}
+{"ts": 5, "act": "generated_states", "state_id": 4, "op": "push shakey room2 room1 door1 box"}
+{"ts":5, "act": "state_update", "state_id": 7, "g": -1, "real_g": -1}
+{"ts": 5, "act": "evaluated_states", "state_id": 7, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 7, "h_goal_count": 1}
+{"ts": 5, "act": "evaluated_heuristics", "count": 1}
+{"ts":5, "act": "state_update", "state_id": 2, "new_parent": [4, "push shakey room2 room3 door3 box", 1]}
+{"ts": 5, "act": "generated_states", "state_id": 4, "op": "push shakey room2 room3 door3 box"}
+{"ts":5, "act": "state_update", "state_id": 8, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [4, "move shakey room2 room1 door1", 1]}
+{"ts": 5, "act": "generated_states", "state_id": 4, "op": "move shakey room2 room1 door1"}
+{"ts":5, "act": "state_update", "state_id": 8, "g": -1, "real_g": -1}
+{"ts": 5, "act": "evaluated_states", "state_id": 8, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 8, "h_goal_count": 1}
+{"ts": 5, "act": "evaluated_heuristics", "count": 1}
+{"ts":5, "act": "state_update", "state_id": 9, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [4, "move shakey room2 room3 door2", 1]}
+{"ts": 5, "act": "generated_states", "state_id": 4, "op": "move shakey room2 room3 door2"}
+{"ts":5, "act": "state_update", "state_id": 9, "g": -1, "real_g": -1}
+{"ts": 5, "act": "evaluated_states", "state_id": 9, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 5}
+{"ts":5, "act": "state_update", "state_id": 9, "h_goal_count": 1}
+{"ts": 5, "act": "evaluated_heuristics", "count": 1}
+{"ts": 5, "act": "generated_states", "state_id": 4, "op": "move shakey room2 room3 door3"}
+{"ts":5, "act": "state_update", "state_id": 9, "g": 4, "real_g": 4}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 5, "g": 4, "real_g": 4}
+{"ts": 6, "act": "expanded_states", "state_id": 5}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 10, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [5, "climb_down shakey", 1]}
+{"ts": 6, "act": "generated_states", "state_id": 5, "op": "climb_down shakey"}
+{"ts":6, "act": "state_update", "state_id": 10, "g": -1, "real_g": -1}
+{"ts": 6, "act": "evaluated_states", "state_id": 10, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 6}
+{"ts":6, "act": "state_update", "state_id": 10, "h_goal_count": 1}
+{"ts": 6, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 6, "g": 4, "real_g": 4}
+{"ts": 7, "act": "expanded_states", "state_id": 6}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 4, "new_parent": [6, "climb_down shakey", 1]}
+{"ts": 7, "act": "generated_states", "state_id": 6, "op": "climb_down shakey"}
+{"ts":7, "act": "state_update", "state_id": 11, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [6, "switch_on switch2 shakey room2", 1]}
+{"ts": 7, "act": "generated_states", "state_id": 6, "op": "switch_on switch2 shakey room2"}
+{"ts":7, "act": "state_update", "state_id": 11, "g": -1, "real_g": -1}
+{"ts": 7, "act": "evaluated_states", "state_id": 11, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 7}
+{"ts":7, "act": "state_update", "state_id": 11, "h_goal_count": 1}
+{"ts": 7, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 7, "g": 4, "real_g": 4}
+{"ts": 8, "act": "expanded_states", "state_id": 7}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 12, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [7, "climb_up box shakey room1", 1]}
+{"ts": 8, "act": "generated_states", "state_id": 7, "op": "climb_up box shakey room1"}
+{"ts":8, "act": "state_update", "state_id": 12, "g": -1, "real_g": -1}
+{"ts": 8, "act": "evaluated_states", "state_id": 12, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 12, "h_goal_count": 1}
+{"ts": 8, "act": "evaluated_heuristics", "count": 1}
+{"ts":8, "act": "state_update", "state_id": 4, "new_parent": [7, "push shakey room1 room2 door1 box", 1]}
+{"ts": 8, "act": "generated_states", "state_id": 7, "op": "push shakey room1 room2 door1 box"}
+{"ts":8, "act": "state_update", "state_id": 13, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [7, "move shakey room1 room2 door1", 1]}
+{"ts": 8, "act": "generated_states", "state_id": 7, "op": "move shakey room1 room2 door1"}
+{"ts":8, "act": "state_update", "state_id": 13, "g": -1, "real_g": -1}
+{"ts": 8, "act": "evaluated_states", "state_id": 13, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 8}
+{"ts":8, "act": "state_update", "state_id": 13, "h_goal_count": 1}
+{"ts": 8, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 9}
+{"ts":9, "act": "state_update", "state_id": 8, "g": 4, "real_g": 4}
+{"ts": 9, "act": "expanded_states", "state_id": 8}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 9}
+{"ts":9, "act": "state_update", "state_id": 4, "new_parent": [8, "move shakey room1 room2 door1", 1]}
+{"ts": 9, "act": "generated_states", "state_id": 8, "op": "move shakey room1 room2 door1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 10}
+{"ts": 10, "act": "expanded_states", "state_id": 9}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 10}
+{"ts":10, "act": "state_update", "state_id": 4, "new_parent": [9, "move shakey room3 room2 door2", 1]}
+{"ts": 10, "act": "generated_states", "state_id": 9, "op": "move shakey room3 room2 door2"}
+{"ts": 10, "act": "generated_states", "state_id": 9, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 10, "g": 5, "real_g": 5}
+{"ts": 11, "act": "expanded_states", "state_id": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 5, "new_parent": [10, "climb_up box shakey room3", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 10, "op": "climb_up box shakey room3"}
+{"ts":11, "act": "state_update", "state_id": 14, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [10, "push shakey room3 room2 door3 box", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 10, "op": "push shakey room3 room2 door3 box"}
+{"ts":11, "act": "state_update", "state_id": 14, "g": -1, "real_g": -1}
+{"ts": 11, "act": "evaluated_states", "state_id": 14, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 14, "h_goal_count": 1}
+{"ts": 11, "act": "evaluated_heuristics", "count": 1}
+{"ts":11, "act": "state_update", "state_id": 15, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [10, "move shakey room3 room2 door2", 1]}
+{"ts": 11, "act": "generated_states", "state_id": 10, "op": "move shakey room3 room2 door2"}
+{"ts":11, "act": "state_update", "state_id": 15, "g": -1, "real_g": -1}
+{"ts": 11, "act": "evaluated_states", "state_id": 15, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 11}
+{"ts":11, "act": "state_update", "state_id": 15, "h_goal_count": 1}
+{"ts": 11, "act": "evaluated_heuristics", "count": 1}
+{"ts": 11, "act": "generated_states", "state_id": 10, "op": "move shakey room3 room2 door3"}
+{"ts":11, "act": "state_update", "state_id": 15, "g": 6, "real_g": 6}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 11, "g": 5, "real_g": 5}
+{"ts": 12, "act": "expanded_states", "state_id": 11}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 16, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [11, "climb_down shakey", 1]}
+{"ts": 12, "act": "generated_states", "state_id": 11, "op": "climb_down shakey"}
+{"ts":12, "act": "state_update", "state_id": 16, "g": -1, "real_g": -1}
+{"ts": 12, "act": "evaluated_states", "state_id": 16, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 12}
+{"ts":12, "act": "state_update", "state_id": 16, "h_goal_count": 1}
+{"ts": 12, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 12, "g": 5, "real_g": 5}
+{"ts": 13, "act": "expanded_states", "state_id": 12}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 7, "new_parent": [12, "climb_down shakey", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 12, "op": "climb_down shakey"}
+{"ts":13, "act": "state_update", "state_id": 17, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [12, "switch_on switch1 shakey room1", 1]}
+{"ts": 13, "act": "generated_states", "state_id": 12, "op": "switch_on switch1 shakey room1"}
+{"ts":13, "act": "state_update", "state_id": 17, "g": -1, "real_g": -1}
+{"ts": 13, "act": "evaluated_states", "state_id": 17, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 13}
+{"ts":13, "act": "state_update", "state_id": 17, "h_goal_count": 1}
+{"ts": 13, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 13, "g": 5, "real_g": 5}
+{"ts": 14, "act": "expanded_states", "state_id": 13}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 7, "new_parent": [13, "move shakey room2 room1 door1", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 13, "op": "move shakey room2 room1 door1"}
+{"ts":14, "act": "state_update", "state_id": 18, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [13, "move shakey room2 room3 door2", 1]}
+{"ts": 14, "act": "generated_states", "state_id": 13, "op": "move shakey room2 room3 door2"}
+{"ts":14, "act": "state_update", "state_id": 18, "g": -1, "real_g": -1}
+{"ts": 14, "act": "evaluated_states", "state_id": 18, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 14}
+{"ts":14, "act": "state_update", "state_id": 18, "h_goal_count": 1}
+{"ts": 14, "act": "evaluated_heuristics", "count": 1}
+{"ts": 14, "act": "generated_states", "state_id": 13, "op": "move shakey room2 room3 door3"}
+{"ts":14, "act": "state_update", "state_id": 18, "g": 6, "real_g": 6}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 14, "g": 6, "real_g": 6}
+{"ts": 15, "act": "expanded_states", "state_id": 14}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 19, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [14, "climb_up box shakey room2", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 14, "op": "climb_up box shakey room2"}
+{"ts":15, "act": "state_update", "state_id": 19, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 19, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 19, "h_goal_count": 1}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts":15, "act": "state_update", "state_id": 20, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [14, "push shakey room2 room1 door1 box", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 14, "op": "push shakey room2 room1 door1 box"}
+{"ts":15, "act": "state_update", "state_id": 20, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 20, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 20, "h_goal_count": 1}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts":15, "act": "state_update", "state_id": 10, "new_parent": [14, "push shakey room2 room3 door3 box", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 14, "op": "push shakey room2 room3 door3 box"}
+{"ts":15, "act": "state_update", "state_id": 21, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [14, "move shakey room2 room1 door1", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 14, "op": "move shakey room2 room1 door1"}
+{"ts":15, "act": "state_update", "state_id": 21, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 21, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 21, "h_goal_count": 1}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts":15, "act": "state_update", "state_id": 22, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [14, "move shakey room2 room3 door2", 1]}
+{"ts": 15, "act": "generated_states", "state_id": 14, "op": "move shakey room2 room3 door2"}
+{"ts":15, "act": "state_update", "state_id": 22, "g": -1, "real_g": -1}
+{"ts": 15, "act": "evaluated_states", "state_id": 22, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 15}
+{"ts":15, "act": "state_update", "state_id": 22, "h_goal_count": 1}
+{"ts": 15, "act": "evaluated_heuristics", "count": 1}
+{"ts": 15, "act": "generated_states", "state_id": 14, "op": "move shakey room2 room3 door3"}
+{"ts":15, "act": "state_update", "state_id": 22, "g": 7, "real_g": 7}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts": 16, "act": "expanded_states", "state_id": 15}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 23, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [15, "move shakey room2 room1 door1", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 15, "op": "move shakey room2 room1 door1"}
+{"ts":16, "act": "state_update", "state_id": 23, "g": -1, "real_g": -1}
+{"ts": 16, "act": "evaluated_states", "state_id": 23, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 16}
+{"ts":16, "act": "state_update", "state_id": 23, "h_goal_count": 1}
+{"ts": 16, "act": "evaluated_heuristics", "count": 1}
+{"ts":16, "act": "state_update", "state_id": 10, "new_parent": [15, "move shakey room2 room3 door2", 1]}
+{"ts": 16, "act": "generated_states", "state_id": 15, "op": "move shakey room2 room3 door2"}
+{"ts": 16, "act": "generated_states", "state_id": 15, "op": "move shakey room2 room3 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 16, "g": 6, "real_g": 6}
+{"ts": 17, "act": "expanded_states", "state_id": 16}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 11, "new_parent": [16, "climb_up box shakey room2", 1]}
+{"ts": 17, "act": "generated_states", "state_id": 16, "op": "climb_up box shakey room2"}
+{"ts":17, "act": "state_update", "state_id": 24, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [16, "push shakey room2 room1 door1 box", 1]}
+{"ts": 17, "act": "generated_states", "state_id": 16, "op": "push shakey room2 room1 door1 box"}
+{"ts":17, "act": "state_update", "state_id": 24, "g": -1, "real_g": -1}
+{"ts": 17, "act": "evaluated_states", "state_id": 24, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 24, "h_goal_count": 1}
+{"ts": 17, "act": "evaluated_heuristics", "count": 1}
+{"ts":17, "act": "state_update", "state_id": 25, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [16, "push shakey room2 room3 door3 box", 1]}
+{"ts": 17, "act": "generated_states", "state_id": 16, "op": "push shakey room2 room3 door3 box"}
+{"ts":17, "act": "state_update", "state_id": 25, "g": -1, "real_g": -1}
+{"ts": 17, "act": "evaluated_states", "state_id": 25, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 25, "h_goal_count": 1}
+{"ts": 17, "act": "evaluated_heuristics", "count": 1}
+{"ts":17, "act": "state_update", "state_id": 26, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [16, "move shakey room2 room1 door1", 1]}
+{"ts": 17, "act": "generated_states", "state_id": 16, "op": "move shakey room2 room1 door1"}
+{"ts":17, "act": "state_update", "state_id": 26, "g": -1, "real_g": -1}
+{"ts": 17, "act": "evaluated_states", "state_id": 26, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 26, "h_goal_count": 1}
+{"ts": 17, "act": "evaluated_heuristics", "count": 1}
+{"ts":17, "act": "state_update", "state_id": 27, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [16, "move shakey room2 room3 door2", 1]}
+{"ts": 17, "act": "generated_states", "state_id": 16, "op": "move shakey room2 room3 door2"}
+{"ts":17, "act": "state_update", "state_id": 27, "g": -1, "real_g": -1}
+{"ts": 17, "act": "evaluated_states", "state_id": 27, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 17}
+{"ts":17, "act": "state_update", "state_id": 27, "h_goal_count": 1}
+{"ts": 17, "act": "evaluated_heuristics", "count": 1}
+{"ts": 17, "act": "generated_states", "state_id": 16, "op": "move shakey room2 room3 door3"}
+{"ts":17, "act": "state_update", "state_id": 27, "g": 7, "real_g": 7}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 18}
+{"ts":18, "act": "state_update", "state_id": 17, "g": 6, "real_g": 6}
+{"ts": 18, "act": "expanded_states", "state_id": 17}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 18}
+{"ts":18, "act": "state_update", "state_id": 28, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [17, "climb_down shakey", 1]}
+{"ts": 18, "act": "generated_states", "state_id": 17, "op": "climb_down shakey"}
+{"ts":18, "act": "state_update", "state_id": 28, "g": -1, "real_g": -1}
+{"ts": 18, "act": "evaluated_states", "state_id": 28, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 18}
+{"ts":18, "act": "state_update", "state_id": 28, "h_goal_count": 1}
+{"ts": 18, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 19}
+{"ts": 19, "act": "expanded_states", "state_id": 18}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 19}
+{"ts":19, "act": "state_update", "state_id": 13, "new_parent": [18, "move shakey room3 room2 door2", 1]}
+{"ts": 19, "act": "generated_states", "state_id": 18, "op": "move shakey room3 room2 door2"}
+{"ts": 19, "act": "generated_states", "state_id": 18, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 20}
+{"ts":20, "act": "state_update", "state_id": 19, "g": 7, "real_g": 7}
+{"ts": 20, "act": "expanded_states", "state_id": 19}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 20}
+{"ts":20, "act": "state_update", "state_id": 14, "new_parent": [19, "climb_down shakey", 1]}
+{"ts": 20, "act": "generated_states", "state_id": 19, "op": "climb_down shakey"}
+{"ts":20, "act": "state_update", "state_id": 29, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [19, "switch_on switch2 shakey room2", 1]}
+{"ts": 20, "act": "generated_states", "state_id": 19, "op": "switch_on switch2 shakey room2"}
+{"ts":20, "act": "state_update", "state_id": 29, "g": -1, "real_g": -1}
+{"ts": 20, "act": "evaluated_states", "state_id": 29, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 20}
+{"ts":20, "act": "state_update", "state_id": 29, "h_goal_count": 1}
+{"ts": 20, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 21}
+{"ts":21, "act": "state_update", "state_id": 20, "g": 7, "real_g": 7}
+{"ts": 21, "act": "expanded_states", "state_id": 20}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 21}
+{"ts":21, "act": "state_update", "state_id": 30, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [20, "climb_up box shakey room1", 1]}
+{"ts": 21, "act": "generated_states", "state_id": 20, "op": "climb_up box shakey room1"}
+{"ts":21, "act": "state_update", "state_id": 30, "g": -1, "real_g": -1}
+{"ts": 21, "act": "evaluated_states", "state_id": 30, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 21}
+{"ts":21, "act": "state_update", "state_id": 30, "h_goal_count": 1}
+{"ts": 21, "act": "evaluated_heuristics", "count": 1}
+{"ts":21, "act": "state_update", "state_id": 14, "new_parent": [20, "push shakey room1 room2 door1 box", 1]}
+{"ts": 21, "act": "generated_states", "state_id": 20, "op": "push shakey room1 room2 door1 box"}
+{"ts":21, "act": "state_update", "state_id": 31, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [20, "move shakey room1 room2 door1", 1]}
+{"ts": 21, "act": "generated_states", "state_id": 20, "op": "move shakey room1 room2 door1"}
+{"ts":21, "act": "state_update", "state_id": 31, "g": -1, "real_g": -1}
+{"ts": 21, "act": "evaluated_states", "state_id": 31, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 21}
+{"ts":21, "act": "state_update", "state_id": 31, "h_goal_count": 1}
+{"ts": 21, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 22}
+{"ts":22, "act": "state_update", "state_id": 21, "g": 7, "real_g": 7}
+{"ts": 22, "act": "expanded_states", "state_id": 21}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 22}
+{"ts":22, "act": "state_update", "state_id": 14, "new_parent": [21, "move shakey room1 room2 door1", 1]}
+{"ts": 22, "act": "generated_states", "state_id": 21, "op": "move shakey room1 room2 door1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 23}
+{"ts": 23, "act": "expanded_states", "state_id": 22}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 23}
+{"ts":23, "act": "state_update", "state_id": 14, "new_parent": [22, "move shakey room3 room2 door2", 1]}
+{"ts": 23, "act": "generated_states", "state_id": 22, "op": "move shakey room3 room2 door2"}
+{"ts": 23, "act": "generated_states", "state_id": 22, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 24}
+{"ts":24, "act": "state_update", "state_id": 23, "g": 7, "real_g": 7}
+{"ts": 24, "act": "expanded_states", "state_id": 23}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 24}
+{"ts":24, "act": "state_update", "state_id": 15, "new_parent": [23, "move shakey room1 room2 door1", 1]}
+{"ts": 24, "act": "generated_states", "state_id": 23, "op": "move shakey room1 room2 door1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 25}
+{"ts":25, "act": "state_update", "state_id": 24, "g": 7, "real_g": 7}
+{"ts": 25, "act": "expanded_states", "state_id": 24}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 25}
+{"ts":25, "act": "state_update", "state_id": 32, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [24, "climb_up box shakey room1", 1]}
+{"ts": 25, "act": "generated_states", "state_id": 24, "op": "climb_up box shakey room1"}
+{"ts":25, "act": "state_update", "state_id": 32, "g": -1, "real_g": -1}
+{"ts": 25, "act": "evaluated_states", "state_id": 32, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 25}
+{"ts":25, "act": "state_update", "state_id": 32, "h_goal_count": 1}
+{"ts": 25, "act": "evaluated_heuristics", "count": 1}
+{"ts":25, "act": "state_update", "state_id": 16, "new_parent": [24, "push shakey room1 room2 door1 box", 1]}
+{"ts": 25, "act": "generated_states", "state_id": 24, "op": "push shakey room1 room2 door1 box"}
+{"ts":25, "act": "state_update", "state_id": 33, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [24, "move shakey room1 room2 door1", 1]}
+{"ts": 25, "act": "generated_states", "state_id": 24, "op": "move shakey room1 room2 door1"}
+{"ts":25, "act": "state_update", "state_id": 33, "g": -1, "real_g": -1}
+{"ts": 25, "act": "evaluated_states", "state_id": 33, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 25}
+{"ts":25, "act": "state_update", "state_id": 33, "h_goal_count": 1}
+{"ts": 25, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 26}
+{"ts":26, "act": "state_update", "state_id": 25, "g": 7, "real_g": 7}
+{"ts": 26, "act": "expanded_states", "state_id": 25}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 26}
+{"ts":26, "act": "state_update", "state_id": 34, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [25, "climb_up box shakey room3", 1]}
+{"ts": 26, "act": "generated_states", "state_id": 25, "op": "climb_up box shakey room3"}
+{"ts":26, "act": "state_update", "state_id": 34, "g": -1, "real_g": -1}
+{"ts": 26, "act": "evaluated_states", "state_id": 34, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 26}
+{"ts":26, "act": "state_update", "state_id": 34, "h_goal_count": 1}
+{"ts": 26, "act": "evaluated_heuristics", "count": 1}
+{"ts":26, "act": "state_update", "state_id": 16, "new_parent": [25, "push shakey room3 room2 door3 box", 1]}
+{"ts": 26, "act": "generated_states", "state_id": 25, "op": "push shakey room3 room2 door3 box"}
+{"ts":26, "act": "state_update", "state_id": 35, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [25, "move shakey room3 room2 door2", 1]}
+{"ts": 26, "act": "generated_states", "state_id": 25, "op": "move shakey room3 room2 door2"}
+{"ts":26, "act": "state_update", "state_id": 35, "g": -1, "real_g": -1}
+{"ts": 26, "act": "evaluated_states", "state_id": 35, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 26}
+{"ts":26, "act": "state_update", "state_id": 35, "h_goal_count": 1}
+{"ts": 26, "act": "evaluated_heuristics", "count": 1}
+{"ts": 26, "act": "generated_states", "state_id": 25, "op": "move shakey room3 room2 door3"}
+{"ts":26, "act": "state_update", "state_id": 35, "g": 8, "real_g": 8}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 27}
+{"ts":27, "act": "state_update", "state_id": 26, "g": 7, "real_g": 7}
+{"ts": 27, "act": "expanded_states", "state_id": 26}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 27}
+{"ts":27, "act": "state_update", "state_id": 16, "new_parent": [26, "move shakey room1 room2 door1", 1]}
+{"ts": 27, "act": "generated_states", "state_id": 26, "op": "move shakey room1 room2 door1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 28}
+{"ts": 28, "act": "expanded_states", "state_id": 27}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 28}
+{"ts":28, "act": "state_update", "state_id": 16, "new_parent": [27, "move shakey room3 room2 door2", 1]}
+{"ts": 28, "act": "generated_states", "state_id": 27, "op": "move shakey room3 room2 door2"}
+{"ts": 28, "act": "generated_states", "state_id": 27, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 29}
+{"ts":29, "act": "state_update", "state_id": 28, "g": 7, "real_g": 7}
+{"ts": 29, "act": "expanded_states", "state_id": 28}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 29}
+{"ts":29, "act": "state_update", "state_id": 17, "new_parent": [28, "climb_up box shakey room1", 1]}
+{"ts": 29, "act": "generated_states", "state_id": 28, "op": "climb_up box shakey room1"}
+{"ts":29, "act": "state_update", "state_id": 36, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [28, "push shakey room1 room2 door1 box", 1]}
+{"ts": 29, "act": "generated_states", "state_id": 28, "op": "push shakey room1 room2 door1 box"}
+{"ts":29, "act": "state_update", "state_id": 36, "g": -1, "real_g": -1}
+{"ts": 29, "act": "evaluated_states", "state_id": 36, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 29}
+{"ts":29, "act": "state_update", "state_id": 36, "h_goal_count": 1}
+{"ts": 29, "act": "evaluated_heuristics", "count": 1}
+{"ts":29, "act": "state_update", "state_id": 37, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [28, "move shakey room1 room2 door1", 1]}
+{"ts": 29, "act": "generated_states", "state_id": 28, "op": "move shakey room1 room2 door1"}
+{"ts":29, "act": "state_update", "state_id": 37, "g": -1, "real_g": -1}
+{"ts": 29, "act": "evaluated_states", "state_id": 37, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 29}
+{"ts":29, "act": "state_update", "state_id": 37, "h_goal_count": 1}
+{"ts": 29, "act": "evaluated_heuristics", "count": 1}
+{"ts":29, "act": "state_update", "state_id": 38, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [28, "lift shakey room1 arm1 toy switch1", 1]}
+{"ts": 29, "act": "generated_states", "state_id": 28, "op": "lift shakey room1 arm1 toy switch1"}
+{"ts":29, "act": "state_update", "state_id": 38, "g": -1, "real_g": -1}
+{"ts": 29, "act": "evaluated_states", "state_id": 38, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 29}
+{"ts":29, "act": "state_update", "state_id": 38, "h_goal_count": 1}
+{"ts": 29, "act": "evaluated_heuristics", "count": 1}
+{"ts":29, "act": "state_update", "state_id": 39, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [28, "lift shakey room1 arm2 toy switch1", 1]}
+{"ts": 29, "act": "generated_states", "state_id": 28, "op": "lift shakey room1 arm2 toy switch1"}
+{"ts":29, "act": "state_update", "state_id": 39, "g": -1, "real_g": -1}
+{"ts": 29, "act": "evaluated_states", "state_id": 39, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 29}
+{"ts":29, "act": "state_update", "state_id": 39, "h_goal_count": 1}
+{"ts": 29, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 30}
+{"ts":30, "act": "state_update", "state_id": 29, "g": 8, "real_g": 8}
+{"ts": 30, "act": "expanded_states", "state_id": 29}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 30}
+{"ts":30, "act": "state_update", "state_id": 40, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [29, "climb_down shakey", 1]}
+{"ts": 30, "act": "generated_states", "state_id": 29, "op": "climb_down shakey"}
+{"ts":30, "act": "state_update", "state_id": 40, "g": -1, "real_g": -1}
+{"ts": 30, "act": "evaluated_states", "state_id": 40, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 30}
+{"ts":30, "act": "state_update", "state_id": 40, "h_goal_count": 1}
+{"ts": 30, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 31}
+{"ts":31, "act": "state_update", "state_id": 30, "g": 8, "real_g": 8}
+{"ts": 31, "act": "expanded_states", "state_id": 30}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 31}
+{"ts":31, "act": "state_update", "state_id": 20, "new_parent": [30, "climb_down shakey", 1]}
+{"ts": 31, "act": "generated_states", "state_id": 30, "op": "climb_down shakey"}
+{"ts":31, "act": "state_update", "state_id": 41, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [30, "switch_on switch1 shakey room1", 1]}
+{"ts": 31, "act": "generated_states", "state_id": 30, "op": "switch_on switch1 shakey room1"}
+{"ts":31, "act": "state_update", "state_id": 41, "g": -1, "real_g": -1}
+{"ts": 31, "act": "evaluated_states", "state_id": 41, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 31}
+{"ts":31, "act": "state_update", "state_id": 41, "h_goal_count": 1}
+{"ts": 31, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 32}
+{"ts":32, "act": "state_update", "state_id": 31, "g": 8, "real_g": 8}
+{"ts": 32, "act": "expanded_states", "state_id": 31}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 32}
+{"ts":32, "act": "state_update", "state_id": 20, "new_parent": [31, "move shakey room2 room1 door1", 1]}
+{"ts": 32, "act": "generated_states", "state_id": 31, "op": "move shakey room2 room1 door1"}
+{"ts":32, "act": "state_update", "state_id": 42, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [31, "move shakey room2 room3 door2", 1]}
+{"ts": 32, "act": "generated_states", "state_id": 31, "op": "move shakey room2 room3 door2"}
+{"ts":32, "act": "state_update", "state_id": 42, "g": -1, "real_g": -1}
+{"ts": 32, "act": "evaluated_states", "state_id": 42, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 32}
+{"ts":32, "act": "state_update", "state_id": 42, "h_goal_count": 1}
+{"ts": 32, "act": "evaluated_heuristics", "count": 1}
+{"ts": 32, "act": "generated_states", "state_id": 31, "op": "move shakey room2 room3 door3"}
+{"ts":32, "act": "state_update", "state_id": 42, "g": 9, "real_g": 9}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 33}
+{"ts":33, "act": "state_update", "state_id": 32, "g": 8, "real_g": 8}
+{"ts": 33, "act": "expanded_states", "state_id": 32}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 33}
+{"ts":33, "act": "state_update", "state_id": 24, "new_parent": [32, "climb_down shakey", 1]}
+{"ts": 33, "act": "generated_states", "state_id": 32, "op": "climb_down shakey"}
+{"ts":33, "act": "state_update", "state_id": 43, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [32, "switch_on switch1 shakey room1", 1]}
+{"ts": 33, "act": "generated_states", "state_id": 32, "op": "switch_on switch1 shakey room1"}
+{"ts":33, "act": "state_update", "state_id": 43, "g": -1, "real_g": -1}
+{"ts": 33, "act": "evaluated_states", "state_id": 43, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 33}
+{"ts":33, "act": "state_update", "state_id": 43, "h_goal_count": 1}
+{"ts": 33, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 34}
+{"ts":34, "act": "state_update", "state_id": 33, "g": 8, "real_g": 8}
+{"ts": 34, "act": "expanded_states", "state_id": 33}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 34}
+{"ts":34, "act": "state_update", "state_id": 24, "new_parent": [33, "move shakey room2 room1 door1", 1]}
+{"ts": 34, "act": "generated_states", "state_id": 33, "op": "move shakey room2 room1 door1"}
+{"ts":34, "act": "state_update", "state_id": 44, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [33, "move shakey room2 room3 door2", 1]}
+{"ts": 34, "act": "generated_states", "state_id": 33, "op": "move shakey room2 room3 door2"}
+{"ts":34, "act": "state_update", "state_id": 44, "g": -1, "real_g": -1}
+{"ts": 34, "act": "evaluated_states", "state_id": 44, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 34}
+{"ts":34, "act": "state_update", "state_id": 44, "h_goal_count": 1}
+{"ts": 34, "act": "evaluated_heuristics", "count": 1}
+{"ts": 34, "act": "generated_states", "state_id": 33, "op": "move shakey room2 room3 door3"}
+{"ts":34, "act": "state_update", "state_id": 44, "g": 9, "real_g": 9}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 35}
+{"ts":35, "act": "state_update", "state_id": 34, "g": 8, "real_g": 8}
+{"ts": 35, "act": "expanded_states", "state_id": 34}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 35}
+{"ts":35, "act": "state_update", "state_id": 25, "new_parent": [34, "climb_down shakey", 1]}
+{"ts": 35, "act": "generated_states", "state_id": 34, "op": "climb_down shakey"}
+{"ts":35, "act": "state_update", "state_id": 45, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [34, "switch_on switch3 shakey room3", 1]}
+{"ts": 35, "act": "generated_states", "state_id": 34, "op": "switch_on switch3 shakey room3"}
+{"ts":35, "act": "state_update", "state_id": 45, "g": -1, "real_g": -1}
+{"ts": 35, "act": "evaluated_states", "state_id": 45, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 35}
+{"ts":35, "act": "state_update", "state_id": 45, "h_goal_count": 1}
+{"ts": 35, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 36}
+{"ts": 36, "act": "expanded_states", "state_id": 35}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 36}
+{"ts":36, "act": "state_update", "state_id": 46, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [35, "move shakey room2 room1 door1", 1]}
+{"ts": 36, "act": "generated_states", "state_id": 35, "op": "move shakey room2 room1 door1"}
+{"ts":36, "act": "state_update", "state_id": 46, "g": -1, "real_g": -1}
+{"ts": 36, "act": "evaluated_states", "state_id": 46, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 36}
+{"ts":36, "act": "state_update", "state_id": 46, "h_goal_count": 1}
+{"ts": 36, "act": "evaluated_heuristics", "count": 1}
+{"ts":36, "act": "state_update", "state_id": 25, "new_parent": [35, "move shakey room2 room3 door2", 1]}
+{"ts": 36, "act": "generated_states", "state_id": 35, "op": "move shakey room2 room3 door2"}
+{"ts": 36, "act": "generated_states", "state_id": 35, "op": "move shakey room2 room3 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 37}
+{"ts":37, "act": "state_update", "state_id": 36, "g": 8, "real_g": 8}
+{"ts": 37, "act": "expanded_states", "state_id": 36}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 37}
+{"ts":37, "act": "state_update", "state_id": 47, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [36, "climb_up box shakey room2", 1]}
+{"ts": 37, "act": "generated_states", "state_id": 36, "op": "climb_up box shakey room2"}
+{"ts":37, "act": "state_update", "state_id": 47, "g": -1, "real_g": -1}
+{"ts": 37, "act": "evaluated_states", "state_id": 47, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 37}
+{"ts":37, "act": "state_update", "state_id": 47, "h_goal_count": 1}
+{"ts": 37, "act": "evaluated_heuristics", "count": 1}
+{"ts":37, "act": "state_update", "state_id": 28, "new_parent": [36, "push shakey room2 room1 door1 box", 1]}
+{"ts": 37, "act": "generated_states", "state_id": 36, "op": "push shakey room2 room1 door1 box"}
+{"ts":37, "act": "state_update", "state_id": 48, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [36, "push shakey room2 room3 door3 box", 1]}
+{"ts": 37, "act": "generated_states", "state_id": 36, "op": "push shakey room2 room3 door3 box"}
+{"ts":37, "act": "state_update", "state_id": 48, "g": -1, "real_g": -1}
+{"ts": 37, "act": "evaluated_states", "state_id": 48, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 37}
+{"ts":37, "act": "state_update", "state_id": 48, "h_goal_count": 1}
+{"ts": 37, "act": "evaluated_heuristics", "count": 1}
+{"ts":37, "act": "state_update", "state_id": 49, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [36, "move shakey room2 room1 door1", 1]}
+{"ts": 37, "act": "generated_states", "state_id": 36, "op": "move shakey room2 room1 door1"}
+{"ts":37, "act": "state_update", "state_id": 49, "g": -1, "real_g": -1}
+{"ts": 37, "act": "evaluated_states", "state_id": 49, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 37}
+{"ts":37, "act": "state_update", "state_id": 49, "h_goal_count": 1}
+{"ts": 37, "act": "evaluated_heuristics", "count": 1}
+{"ts":37, "act": "state_update", "state_id": 50, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [36, "move shakey room2 room3 door2", 1]}
+{"ts": 37, "act": "generated_states", "state_id": 36, "op": "move shakey room2 room3 door2"}
+{"ts":37, "act": "state_update", "state_id": 50, "g": -1, "real_g": -1}
+{"ts": 37, "act": "evaluated_states", "state_id": 50, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 37}
+{"ts":37, "act": "state_update", "state_id": 50, "h_goal_count": 1}
+{"ts": 37, "act": "evaluated_heuristics", "count": 1}
+{"ts": 37, "act": "generated_states", "state_id": 36, "op": "move shakey room2 room3 door3"}
+{"ts":37, "act": "state_update", "state_id": 50, "g": 9, "real_g": 9}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 38}
+{"ts":38, "act": "state_update", "state_id": 37, "g": 8, "real_g": 8}
+{"ts": 38, "act": "expanded_states", "state_id": 37}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 38}
+{"ts":38, "act": "state_update", "state_id": 28, "new_parent": [37, "move shakey room2 room1 door1", 1]}
+{"ts": 38, "act": "generated_states", "state_id": 37, "op": "move shakey room2 room1 door1"}
+{"ts":38, "act": "state_update", "state_id": 51, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [37, "move shakey room2 room3 door2", 1]}
+{"ts": 38, "act": "generated_states", "state_id": 37, "op": "move shakey room2 room3 door2"}
+{"ts":38, "act": "state_update", "state_id": 51, "g": -1, "real_g": -1}
+{"ts": 38, "act": "evaluated_states", "state_id": 51, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 38}
+{"ts":38, "act": "state_update", "state_id": 51, "h_goal_count": 1}
+{"ts": 38, "act": "evaluated_heuristics", "count": 1}
+{"ts": 38, "act": "generated_states", "state_id": 37, "op": "move shakey room2 room3 door3"}
+{"ts":38, "act": "state_update", "state_id": 51, "g": 9, "real_g": 9}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 39}
+{"ts":39, "act": "state_update", "state_id": 38, "g": 8, "real_g": 8}
+{"ts": 39, "act": "expanded_states", "state_id": 38}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 39}
+{"ts":39, "act": "state_update", "state_id": 52, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [38, "climb_up box shakey room1", 1]}
+{"ts": 39, "act": "generated_states", "state_id": 38, "op": "climb_up box shakey room1"}
+{"ts":39, "act": "state_update", "state_id": 52, "g": -1, "real_g": -1}
+{"ts": 39, "act": "evaluated_states", "state_id": 52, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 39}
+{"ts":39, "act": "state_update", "state_id": 52, "h_goal_count": 1}
+{"ts": 39, "act": "evaluated_heuristics", "count": 1}
+{"ts":39, "act": "state_update", "state_id": 53, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [38, "push shakey room1 room2 door1 box", 1]}
+{"ts": 39, "act": "generated_states", "state_id": 38, "op": "push shakey room1 room2 door1 box"}
+{"ts":39, "act": "state_update", "state_id": 53, "g": -1, "real_g": -1}
+{"ts": 39, "act": "evaluated_states", "state_id": 53, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 39}
+{"ts":39, "act": "state_update", "state_id": 53, "h_goal_count": 1}
+{"ts": 39, "act": "evaluated_heuristics", "count": 1}
+{"ts":39, "act": "state_update", "state_id": 54, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [38, "move shakey room1 room2 door1", 1]}
+{"ts": 39, "act": "generated_states", "state_id": 38, "op": "move shakey room1 room2 door1"}
+{"ts":39, "act": "state_update", "state_id": 54, "g": -1, "real_g": -1}
+{"ts": 39, "act": "evaluated_states", "state_id": 54, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 39}
+{"ts":39, "act": "state_update", "state_id": 54, "h_goal_count": 1}
+{"ts": 39, "act": "evaluated_heuristics", "count": 1}
+{"ts":39, "act": "state_update", "state_id": 28, "new_parent": [38, "drop shakey room1 toy arm1", 1]}
+{"ts": 39, "act": "generated_states", "state_id": 38, "op": "drop shakey room1 toy arm1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 40}
+{"ts":40, "act": "state_update", "state_id": 39, "g": 8, "real_g": 8}
+{"ts": 40, "act": "expanded_states", "state_id": 39}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 40}
+{"ts":40, "act": "state_update", "state_id": 55, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [39, "climb_up box shakey room1", 1]}
+{"ts": 40, "act": "generated_states", "state_id": 39, "op": "climb_up box shakey room1"}
+{"ts":40, "act": "state_update", "state_id": 55, "g": -1, "real_g": -1}
+{"ts": 40, "act": "evaluated_states", "state_id": 55, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 40}
+{"ts":40, "act": "state_update", "state_id": 55, "h_goal_count": 1}
+{"ts": 40, "act": "evaluated_heuristics", "count": 1}
+{"ts":40, "act": "state_update", "state_id": 56, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [39, "push shakey room1 room2 door1 box", 1]}
+{"ts": 40, "act": "generated_states", "state_id": 39, "op": "push shakey room1 room2 door1 box"}
+{"ts":40, "act": "state_update", "state_id": 56, "g": -1, "real_g": -1}
+{"ts": 40, "act": "evaluated_states", "state_id": 56, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 40}
+{"ts":40, "act": "state_update", "state_id": 56, "h_goal_count": 1}
+{"ts": 40, "act": "evaluated_heuristics", "count": 1}
+{"ts":40, "act": "state_update", "state_id": 57, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [39, "move shakey room1 room2 door1", 1]}
+{"ts": 40, "act": "generated_states", "state_id": 39, "op": "move shakey room1 room2 door1"}
+{"ts":40, "act": "state_update", "state_id": 57, "g": -1, "real_g": -1}
+{"ts": 40, "act": "evaluated_states", "state_id": 57, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 40}
+{"ts":40, "act": "state_update", "state_id": 57, "h_goal_count": 1}
+{"ts": 40, "act": "evaluated_heuristics", "count": 1}
+{"ts":40, "act": "state_update", "state_id": 28, "new_parent": [39, "drop shakey room1 toy arm2", 1]}
+{"ts": 40, "act": "generated_states", "state_id": 39, "op": "drop shakey room1 toy arm2"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 41}
+{"ts":41, "act": "state_update", "state_id": 40, "g": 9, "real_g": 9}
+{"ts": 41, "act": "expanded_states", "state_id": 40}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 41}
+{"ts":41, "act": "state_update", "state_id": 29, "new_parent": [40, "climb_up box shakey room2", 1]}
+{"ts": 41, "act": "generated_states", "state_id": 40, "op": "climb_up box shakey room2"}
+{"ts":41, "act": "state_update", "state_id": 58, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [40, "push shakey room2 room1 door1 box", 1]}
+{"ts": 41, "act": "generated_states", "state_id": 40, "op": "push shakey room2 room1 door1 box"}
+{"ts":41, "act": "state_update", "state_id": 58, "g": -1, "real_g": -1}
+{"ts": 41, "act": "evaluated_states", "state_id": 58, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 41}
+{"ts":41, "act": "state_update", "state_id": 58, "h_goal_count": 1}
+{"ts": 41, "act": "evaluated_heuristics", "count": 1}
+{"ts":41, "act": "state_update", "state_id": 59, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [40, "push shakey room2 room3 door3 box", 1]}
+{"ts": 41, "act": "generated_states", "state_id": 40, "op": "push shakey room2 room3 door3 box"}
+{"ts":41, "act": "state_update", "state_id": 59, "g": -1, "real_g": -1}
+{"ts": 41, "act": "evaluated_states", "state_id": 59, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 41}
+{"ts":41, "act": "state_update", "state_id": 59, "h_goal_count": 1}
+{"ts": 41, "act": "evaluated_heuristics", "count": 1}
+{"ts":41, "act": "state_update", "state_id": 60, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [40, "move shakey room2 room1 door1", 1]}
+{"ts": 41, "act": "generated_states", "state_id": 40, "op": "move shakey room2 room1 door1"}
+{"ts":41, "act": "state_update", "state_id": 60, "g": -1, "real_g": -1}
+{"ts": 41, "act": "evaluated_states", "state_id": 60, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 41}
+{"ts":41, "act": "state_update", "state_id": 60, "h_goal_count": 1}
+{"ts": 41, "act": "evaluated_heuristics", "count": 1}
+{"ts":41, "act": "state_update", "state_id": 61, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [40, "move shakey room2 room3 door2", 1]}
+{"ts": 41, "act": "generated_states", "state_id": 40, "op": "move shakey room2 room3 door2"}
+{"ts":41, "act": "state_update", "state_id": 61, "g": -1, "real_g": -1}
+{"ts": 41, "act": "evaluated_states", "state_id": 61, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 41}
+{"ts":41, "act": "state_update", "state_id": 61, "h_goal_count": 1}
+{"ts": 41, "act": "evaluated_heuristics", "count": 1}
+{"ts": 41, "act": "generated_states", "state_id": 40, "op": "move shakey room2 room3 door3"}
+{"ts":41, "act": "state_update", "state_id": 61, "g": 10, "real_g": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 42}
+{"ts":42, "act": "state_update", "state_id": 41, "g": 9, "real_g": 9}
+{"ts": 42, "act": "expanded_states", "state_id": 41}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 42}
+{"ts":42, "act": "state_update", "state_id": 62, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [41, "climb_down shakey", 1]}
+{"ts": 42, "act": "generated_states", "state_id": 41, "op": "climb_down shakey"}
+{"ts":42, "act": "state_update", "state_id": 62, "g": -1, "real_g": -1}
+{"ts": 42, "act": "evaluated_states", "state_id": 62, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 42}
+{"ts":42, "act": "state_update", "state_id": 62, "h_goal_count": 1}
+{"ts": 42, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 43}
+{"ts": 43, "act": "expanded_states", "state_id": 42}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 43}
+{"ts":43, "act": "state_update", "state_id": 31, "new_parent": [42, "move shakey room3 room2 door2", 1]}
+{"ts": 43, "act": "generated_states", "state_id": 42, "op": "move shakey room3 room2 door2"}
+{"ts": 43, "act": "generated_states", "state_id": 42, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 44}
+{"ts":44, "act": "state_update", "state_id": 43, "g": 9, "real_g": 9}
+{"ts": 44, "act": "expanded_states", "state_id": 43}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 44}
+{"ts":44, "act": "state_update", "state_id": 63, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [43, "climb_down shakey", 1]}
+{"ts": 44, "act": "generated_states", "state_id": 43, "op": "climb_down shakey"}
+{"ts":44, "act": "state_update", "state_id": 63, "g": -1, "real_g": -1}
+{"ts": 44, "act": "evaluated_states", "state_id": 63, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 44}
+{"ts":44, "act": "state_update", "state_id": 63, "h_goal_count": 1}
+{"ts": 44, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 45}
+{"ts": 45, "act": "expanded_states", "state_id": 44}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 45}
+{"ts":45, "act": "state_update", "state_id": 33, "new_parent": [44, "move shakey room3 room2 door2", 1]}
+{"ts": 45, "act": "generated_states", "state_id": 44, "op": "move shakey room3 room2 door2"}
+{"ts": 45, "act": "generated_states", "state_id": 44, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 46}
+{"ts":46, "act": "state_update", "state_id": 45, "g": 9, "real_g": 9}
+{"ts": 46, "act": "expanded_states", "state_id": 45}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 46}
+{"ts":46, "act": "state_update", "state_id": 59, "new_parent": [45, "climb_down shakey", 1]}
+{"ts": 46, "act": "generated_states", "state_id": 45, "op": "climb_down shakey"}
+{"ts":46, "act": "state_update", "state_id": 59, "g": 10, "real_g": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 47}
+{"ts":47, "act": "state_update", "state_id": 46, "g": 9, "real_g": 9}
+{"ts": 47, "act": "expanded_states", "state_id": 46}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 47}
+{"ts":47, "act": "state_update", "state_id": 35, "new_parent": [46, "move shakey room1 room2 door1", 1]}
+{"ts": 47, "act": "generated_states", "state_id": 46, "op": "move shakey room1 room2 door1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 48}
+{"ts":48, "act": "state_update", "state_id": 47, "g": 9, "real_g": 9}
+{"ts": 48, "act": "expanded_states", "state_id": 47}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 48}
+{"ts":48, "act": "state_update", "state_id": 36, "new_parent": [47, "climb_down shakey", 1]}
+{"ts": 48, "act": "generated_states", "state_id": 47, "op": "climb_down shakey"}
+{"ts":48, "act": "state_update", "state_id": 64, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [47, "switch_on switch2 shakey room2", 1]}
+{"ts": 48, "act": "generated_states", "state_id": 47, "op": "switch_on switch2 shakey room2"}
+{"ts":48, "act": "state_update", "state_id": 64, "g": -1, "real_g": -1}
+{"ts": 48, "act": "evaluated_states", "state_id": 64, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 48}
+{"ts":48, "act": "state_update", "state_id": 64, "h_goal_count": 1}
+{"ts": 48, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 49}
+{"ts":49, "act": "state_update", "state_id": 48, "g": 9, "real_g": 9}
+{"ts": 49, "act": "expanded_states", "state_id": 48}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 49}
+{"ts":49, "act": "state_update", "state_id": 65, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [48, "climb_up box shakey room3", 1]}
+{"ts": 49, "act": "generated_states", "state_id": 48, "op": "climb_up box shakey room3"}
+{"ts":49, "act": "state_update", "state_id": 65, "g": -1, "real_g": -1}
+{"ts": 49, "act": "evaluated_states", "state_id": 65, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 49}
+{"ts":49, "act": "state_update", "state_id": 65, "h_goal_count": 1}
+{"ts": 49, "act": "evaluated_heuristics", "count": 1}
+{"ts":49, "act": "state_update", "state_id": 36, "new_parent": [48, "push shakey room3 room2 door3 box", 1]}
+{"ts": 49, "act": "generated_states", "state_id": 48, "op": "push shakey room3 room2 door3 box"}
+{"ts":49, "act": "state_update", "state_id": 66, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [48, "move shakey room3 room2 door2", 1]}
+{"ts": 49, "act": "generated_states", "state_id": 48, "op": "move shakey room3 room2 door2"}
+{"ts":49, "act": "state_update", "state_id": 66, "g": -1, "real_g": -1}
+{"ts": 49, "act": "evaluated_states", "state_id": 66, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 49}
+{"ts":49, "act": "state_update", "state_id": 66, "h_goal_count": 1}
+{"ts": 49, "act": "evaluated_heuristics", "count": 1}
+{"ts": 49, "act": "generated_states", "state_id": 48, "op": "move shakey room3 room2 door3"}
+{"ts":49, "act": "state_update", "state_id": 66, "g": 10, "real_g": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 50}
+{"ts":50, "act": "state_update", "state_id": 49, "g": 9, "real_g": 9}
+{"ts": 50, "act": "expanded_states", "state_id": 49}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 50}
+{"ts":50, "act": "state_update", "state_id": 36, "new_parent": [49, "move shakey room1 room2 door1", 1]}
+{"ts": 50, "act": "generated_states", "state_id": 49, "op": "move shakey room1 room2 door1"}
+{"ts":50, "act": "state_update", "state_id": 67, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [49, "lift shakey room1 arm1 toy switch1", 1]}
+{"ts": 50, "act": "generated_states", "state_id": 49, "op": "lift shakey room1 arm1 toy switch1"}
+{"ts":50, "act": "state_update", "state_id": 67, "g": -1, "real_g": -1}
+{"ts": 50, "act": "evaluated_states", "state_id": 67, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 50}
+{"ts":50, "act": "state_update", "state_id": 67, "h_goal_count": 1}
+{"ts": 50, "act": "evaluated_heuristics", "count": 1}
+{"ts":50, "act": "state_update", "state_id": 68, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [49, "lift shakey room1 arm2 toy switch1", 1]}
+{"ts": 50, "act": "generated_states", "state_id": 49, "op": "lift shakey room1 arm2 toy switch1"}
+{"ts":50, "act": "state_update", "state_id": 68, "g": -1, "real_g": -1}
+{"ts": 50, "act": "evaluated_states", "state_id": 68, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 50}
+{"ts":50, "act": "state_update", "state_id": 68, "h_goal_count": 1}
+{"ts": 50, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 51}
+{"ts": 51, "act": "expanded_states", "state_id": 50}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 51}
+{"ts":51, "act": "state_update", "state_id": 36, "new_parent": [50, "move shakey room3 room2 door2", 1]}
+{"ts": 51, "act": "generated_states", "state_id": 50, "op": "move shakey room3 room2 door2"}
+{"ts": 51, "act": "generated_states", "state_id": 50, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 52}
+{"ts": 52, "act": "expanded_states", "state_id": 51}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 52}
+{"ts":52, "act": "state_update", "state_id": 37, "new_parent": [51, "move shakey room3 room2 door2", 1]}
+{"ts": 52, "act": "generated_states", "state_id": 51, "op": "move shakey room3 room2 door2"}
+{"ts": 52, "act": "generated_states", "state_id": 51, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 53}
+{"ts":53, "act": "state_update", "state_id": 52, "g": 9, "real_g": 9}
+{"ts": 53, "act": "expanded_states", "state_id": 52}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 53}
+{"ts":53, "act": "state_update", "state_id": 38, "new_parent": [52, "climb_down shakey", 1]}
+{"ts": 53, "act": "generated_states", "state_id": 52, "op": "climb_down shakey"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 54}
+{"ts":54, "act": "state_update", "state_id": 53, "g": 9, "real_g": 9}
+{"ts": 54, "act": "expanded_states", "state_id": 53}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 54}
+{"ts":54, "act": "state_update", "state_id": 69, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [53, "climb_up box shakey room2", 1]}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "climb_up box shakey room2"}
+{"ts":54, "act": "state_update", "state_id": 69, "g": -1, "real_g": -1}
+{"ts": 54, "act": "evaluated_states", "state_id": 69, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 54}
+{"ts":54, "act": "state_update", "state_id": 69, "h_goal_count": 1}
+{"ts": 54, "act": "evaluated_heuristics", "count": 1}
+{"ts":54, "act": "state_update", "state_id": 38, "new_parent": [53, "push shakey room2 room1 door1 box", 1]}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "push shakey room2 room1 door1 box"}
+{"ts":54, "act": "state_update", "state_id": 70, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [53, "push shakey room2 room3 door3 box", 1]}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "push shakey room2 room3 door3 box"}
+{"ts":54, "act": "state_update", "state_id": 70, "g": -1, "real_g": -1}
+{"ts": 54, "act": "evaluated_states", "state_id": 70, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 54}
+{"ts":54, "act": "state_update", "state_id": 70, "h_goal_count": 1}
+{"ts": 54, "act": "evaluated_heuristics", "count": 1}
+{"ts":54, "act": "state_update", "state_id": 67, "new_parent": [53, "move shakey room2 room1 door1", 1]}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "move shakey room2 room1 door1"}
+{"ts":54, "act": "state_update", "state_id": 67, "g": 10, "real_g": 10}
+{"ts":54, "act": "state_update", "state_id": 71, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [53, "move shakey room2 room3 door2", 1]}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "move shakey room2 room3 door2"}
+{"ts":54, "act": "state_update", "state_id": 71, "g": -1, "real_g": -1}
+{"ts": 54, "act": "evaluated_states", "state_id": 71, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 54}
+{"ts":54, "act": "state_update", "state_id": 71, "h_goal_count": 1}
+{"ts": 54, "act": "evaluated_heuristics", "count": 1}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "move shakey room2 room3 door3"}
+{"ts":54, "act": "state_update", "state_id": 71, "g": 10, "real_g": 10}
+{"ts":54, "act": "state_update", "state_id": 72, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "3(Atom in(toy, room2))"}, "new_parent": [53, "drop shakey room2 toy arm1", 1]}
+{"ts": 54, "act": "generated_states", "state_id": 53, "op": "drop shakey room2 toy arm1"}
+{"ts":54, "act": "state_update", "state_id": 72, "g": -1, "real_g": -1}
+{"ts": 54, "act": "evaluated_states", "state_id": 72, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 54}
+{"ts":54, "act": "state_update", "state_id": 72, "h_goal_count": 1}
+{"ts": 54, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 55}
+{"ts":55, "act": "state_update", "state_id": 54, "g": 9, "real_g": 9}
+{"ts": 55, "act": "expanded_states", "state_id": 54}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 55}
+{"ts":55, "act": "state_update", "state_id": 38, "new_parent": [54, "move shakey room2 room1 door1", 1]}
+{"ts": 55, "act": "generated_states", "state_id": 54, "op": "move shakey room2 room1 door1"}
+{"ts":55, "act": "state_update", "state_id": 73, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [54, "move shakey room2 room3 door2", 1]}
+{"ts": 55, "act": "generated_states", "state_id": 54, "op": "move shakey room2 room3 door2"}
+{"ts":55, "act": "state_update", "state_id": 73, "g": -1, "real_g": -1}
+{"ts": 55, "act": "evaluated_states", "state_id": 73, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 55}
+{"ts":55, "act": "state_update", "state_id": 73, "h_goal_count": 1}
+{"ts": 55, "act": "evaluated_heuristics", "count": 1}
+{"ts": 55, "act": "generated_states", "state_id": 54, "op": "move shakey room2 room3 door3"}
+{"ts":55, "act": "state_update", "state_id": 73, "g": 10, "real_g": 10}
+{"ts":55, "act": "state_update", "state_id": 74, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "3(Atom in(toy, room2))"}, "new_parent": [54, "drop shakey room2 toy arm1", 1]}
+{"ts": 55, "act": "generated_states", "state_id": 54, "op": "drop shakey room2 toy arm1"}
+{"ts":55, "act": "state_update", "state_id": 74, "g": -1, "real_g": -1}
+{"ts": 55, "act": "evaluated_states", "state_id": 74, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 55}
+{"ts":55, "act": "state_update", "state_id": 74, "h_goal_count": 1}
+{"ts": 55, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 56}
+{"ts":56, "act": "state_update", "state_id": 55, "g": 9, "real_g": 9}
+{"ts": 56, "act": "expanded_states", "state_id": 55}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 56}
+{"ts":56, "act": "state_update", "state_id": 39, "new_parent": [55, "climb_down shakey", 1]}
+{"ts": 56, "act": "generated_states", "state_id": 55, "op": "climb_down shakey"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 57}
+{"ts":57, "act": "state_update", "state_id": 56, "g": 9, "real_g": 9}
+{"ts": 57, "act": "expanded_states", "state_id": 56}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 57}
+{"ts":57, "act": "state_update", "state_id": 75, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [56, "climb_up box shakey room2", 1]}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "climb_up box shakey room2"}
+{"ts":57, "act": "state_update", "state_id": 75, "g": -1, "real_g": -1}
+{"ts": 57, "act": "evaluated_states", "state_id": 75, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 57}
+{"ts":57, "act": "state_update", "state_id": 75, "h_goal_count": 1}
+{"ts": 57, "act": "evaluated_heuristics", "count": 1}
+{"ts":57, "act": "state_update", "state_id": 39, "new_parent": [56, "push shakey room2 room1 door1 box", 1]}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "push shakey room2 room1 door1 box"}
+{"ts":57, "act": "state_update", "state_id": 76, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [56, "push shakey room2 room3 door3 box", 1]}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "push shakey room2 room3 door3 box"}
+{"ts":57, "act": "state_update", "state_id": 76, "g": -1, "real_g": -1}
+{"ts": 57, "act": "evaluated_states", "state_id": 76, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 57}
+{"ts":57, "act": "state_update", "state_id": 76, "h_goal_count": 1}
+{"ts": 57, "act": "evaluated_heuristics", "count": 1}
+{"ts":57, "act": "state_update", "state_id": 68, "new_parent": [56, "move shakey room2 room1 door1", 1]}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "move shakey room2 room1 door1"}
+{"ts":57, "act": "state_update", "state_id": 68, "g": 10, "real_g": 10}
+{"ts":57, "act": "state_update", "state_id": 77, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [56, "move shakey room2 room3 door2", 1]}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "move shakey room2 room3 door2"}
+{"ts":57, "act": "state_update", "state_id": 77, "g": -1, "real_g": -1}
+{"ts": 57, "act": "evaluated_states", "state_id": 77, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 57}
+{"ts":57, "act": "state_update", "state_id": 77, "h_goal_count": 1}
+{"ts": 57, "act": "evaluated_heuristics", "count": 1}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "move shakey room2 room3 door3"}
+{"ts":57, "act": "state_update", "state_id": 77, "g": 10, "real_g": 10}
+{"ts":57, "act": "state_update", "state_id": 72, "new_parent": [56, "drop shakey room2 toy arm2", 1]}
+{"ts": 57, "act": "generated_states", "state_id": 56, "op": "drop shakey room2 toy arm2"}
+{"ts":57, "act": "state_update", "state_id": 72, "g": 10, "real_g": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 58}
+{"ts":58, "act": "state_update", "state_id": 57, "g": 9, "real_g": 9}
+{"ts": 58, "act": "expanded_states", "state_id": 57}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 58}
+{"ts":58, "act": "state_update", "state_id": 39, "new_parent": [57, "move shakey room2 room1 door1", 1]}
+{"ts": 58, "act": "generated_states", "state_id": 57, "op": "move shakey room2 room1 door1"}
+{"ts":58, "act": "state_update", "state_id": 78, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [57, "move shakey room2 room3 door2", 1]}
+{"ts": 58, "act": "generated_states", "state_id": 57, "op": "move shakey room2 room3 door2"}
+{"ts":58, "act": "state_update", "state_id": 78, "g": -1, "real_g": -1}
+{"ts": 58, "act": "evaluated_states", "state_id": 78, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 58}
+{"ts":58, "act": "state_update", "state_id": 78, "h_goal_count": 1}
+{"ts": 58, "act": "evaluated_heuristics", "count": 1}
+{"ts": 58, "act": "generated_states", "state_id": 57, "op": "move shakey room2 room3 door3"}
+{"ts":58, "act": "state_update", "state_id": 78, "g": 10, "real_g": 10}
+{"ts":58, "act": "state_update", "state_id": 74, "new_parent": [57, "drop shakey room2 toy arm2", 1]}
+{"ts": 58, "act": "generated_states", "state_id": 57, "op": "drop shakey room2 toy arm2"}
+{"ts":58, "act": "state_update", "state_id": 74, "g": 10, "real_g": 10}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 59}
+{"ts":59, "act": "state_update", "state_id": 58, "g": 10, "real_g": 10}
+{"ts": 59, "act": "expanded_states", "state_id": 58}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 59}
+{"ts":59, "act": "state_update", "state_id": 79, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [58, "climb_up box shakey room1", 1]}
+{"ts": 59, "act": "generated_states", "state_id": 58, "op": "climb_up box shakey room1"}
+{"ts":59, "act": "state_update", "state_id": 79, "g": -1, "real_g": -1}
+{"ts": 59, "act": "evaluated_states", "state_id": 79, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 59}
+{"ts":59, "act": "state_update", "state_id": 79, "h_goal_count": 1}
+{"ts": 59, "act": "evaluated_heuristics", "count": 1}
+{"ts":59, "act": "state_update", "state_id": 40, "new_parent": [58, "push shakey room1 room2 door1 box", 1]}
+{"ts": 59, "act": "generated_states", "state_id": 58, "op": "push shakey room1 room2 door1 box"}
+{"ts":59, "act": "state_update", "state_id": 80, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [58, "move shakey room1 room2 door1", 1]}
+{"ts": 59, "act": "generated_states", "state_id": 58, "op": "move shakey room1 room2 door1"}
+{"ts":59, "act": "state_update", "state_id": 80, "g": -1, "real_g": -1}
+{"ts": 59, "act": "evaluated_states", "state_id": 80, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 59}
+{"ts":59, "act": "state_update", "state_id": 80, "h_goal_count": 1}
+{"ts": 59, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 60}
+{"ts": 60, "act": "expanded_states", "state_id": 59}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 60}
+{"ts":60, "act": "state_update", "state_id": 45, "new_parent": [59, "climb_up box shakey room3", 1]}
+{"ts": 60, "act": "generated_states", "state_id": 59, "op": "climb_up box shakey room3"}
+{"ts":60, "act": "state_update", "state_id": 40, "new_parent": [59, "push shakey room3 room2 door3 box", 1]}
+{"ts": 60, "act": "generated_states", "state_id": 59, "op": "push shakey room3 room2 door3 box"}
+{"ts":60, "act": "state_update", "state_id": 81, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "1(NegatedAtom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [59, "move shakey room3 room2 door2", 1]}
+{"ts": 60, "act": "generated_states", "state_id": 59, "op": "move shakey room3 room2 door2"}
+{"ts":60, "act": "state_update", "state_id": 81, "g": -1, "real_g": -1}
+{"ts": 60, "act": "evaluated_states", "state_id": 81, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 60}
+{"ts":60, "act": "state_update", "state_id": 81, "h_goal_count": 1}
+{"ts": 60, "act": "evaluated_heuristics", "count": 1}
+{"ts": 60, "act": "generated_states", "state_id": 59, "op": "move shakey room3 room2 door3"}
+{"ts":60, "act": "state_update", "state_id": 81, "g": 11, "real_g": 11}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 61}
+{"ts":61, "act": "state_update", "state_id": 60, "g": 10, "real_g": 10}
+{"ts": 61, "act": "expanded_states", "state_id": 60}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 61}
+{"ts":61, "act": "state_update", "state_id": 40, "new_parent": [60, "move shakey room1 room2 door1", 1]}
+{"ts": 61, "act": "generated_states", "state_id": 60, "op": "move shakey room1 room2 door1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 62}
+{"ts": 62, "act": "expanded_states", "state_id": 61}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 62}
+{"ts":62, "act": "state_update", "state_id": 40, "new_parent": [61, "move shakey room3 room2 door2", 1]}
+{"ts": 62, "act": "generated_states", "state_id": 61, "op": "move shakey room3 room2 door2"}
+{"ts": 62, "act": "generated_states", "state_id": 61, "op": "move shakey room3 room2 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 63}
+{"ts":63, "act": "state_update", "state_id": 62, "g": 10, "real_g": 10}
+{"ts": 63, "act": "expanded_states", "state_id": 62}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 63}
+{"ts":63, "act": "state_update", "state_id": 41, "new_parent": [62, "climb_up box shakey room1", 1]}
+{"ts": 63, "act": "generated_states", "state_id": 62, "op": "climb_up box shakey room1"}
+{"ts":63, "act": "state_update", "state_id": 82, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [62, "push shakey room1 room2 door1 box", 1]}
+{"ts": 63, "act": "generated_states", "state_id": 62, "op": "push shakey room1 room2 door1 box"}
+{"ts":63, "act": "state_update", "state_id": 82, "g": -1, "real_g": -1}
+{"ts": 63, "act": "evaluated_states", "state_id": 82, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 63}
+{"ts":63, "act": "state_update", "state_id": 82, "h_goal_count": 1}
+{"ts": 63, "act": "evaluated_heuristics", "count": 1}
+{"ts":63, "act": "state_update", "state_id": 83, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [62, "move shakey room1 room2 door1", 1]}
+{"ts": 63, "act": "generated_states", "state_id": 62, "op": "move shakey room1 room2 door1"}
+{"ts":63, "act": "state_update", "state_id": 83, "g": -1, "real_g": -1}
+{"ts": 63, "act": "evaluated_states", "state_id": 83, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 63}
+{"ts":63, "act": "state_update", "state_id": 83, "h_goal_count": 1}
+{"ts": 63, "act": "evaluated_heuristics", "count": 1}
+{"ts":63, "act": "state_update", "state_id": 84, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [62, "lift shakey room1 arm1 toy switch1", 1]}
+{"ts": 63, "act": "generated_states", "state_id": 62, "op": "lift shakey room1 arm1 toy switch1"}
+{"ts":63, "act": "state_update", "state_id": 84, "g": -1, "real_g": -1}
+{"ts": 63, "act": "evaluated_states", "state_id": 84, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 63}
+{"ts":63, "act": "state_update", "state_id": 84, "h_goal_count": 1}
+{"ts": 63, "act": "evaluated_heuristics", "count": 1}
+{"ts":63, "act": "state_update", "state_id": 85, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [62, "lift shakey room1 arm2 toy switch1", 1]}
+{"ts": 63, "act": "generated_states", "state_id": 62, "op": "lift shakey room1 arm2 toy switch1"}
+{"ts":63, "act": "state_update", "state_id": 85, "g": -1, "real_g": -1}
+{"ts": 63, "act": "evaluated_states", "state_id": 85, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 63}
+{"ts":63, "act": "state_update", "state_id": 85, "h_goal_count": 1}
+{"ts": 63, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 64}
+{"ts":64, "act": "state_update", "state_id": 63, "g": 10, "real_g": 10}
+{"ts": 64, "act": "expanded_states", "state_id": 63}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 64}
+{"ts":64, "act": "state_update", "state_id": 43, "new_parent": [63, "climb_up box shakey room1", 1]}
+{"ts": 64, "act": "generated_states", "state_id": 63, "op": "climb_up box shakey room1"}
+{"ts":64, "act": "state_update", "state_id": 86, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [63, "push shakey room1 room2 door1 box", 1]}
+{"ts": 64, "act": "generated_states", "state_id": 63, "op": "push shakey room1 room2 door1 box"}
+{"ts":64, "act": "state_update", "state_id": 86, "g": -1, "real_g": -1}
+{"ts": 64, "act": "evaluated_states", "state_id": 86, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 64}
+{"ts":64, "act": "state_update", "state_id": 86, "h_goal_count": 1}
+{"ts": 64, "act": "evaluated_heuristics", "count": 1}
+{"ts":64, "act": "state_update", "state_id": 87, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [63, "move shakey room1 room2 door1", 1]}
+{"ts": 64, "act": "generated_states", "state_id": 63, "op": "move shakey room1 room2 door1"}
+{"ts":64, "act": "state_update", "state_id": 87, "g": -1, "real_g": -1}
+{"ts": 64, "act": "evaluated_states", "state_id": 87, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 64}
+{"ts":64, "act": "state_update", "state_id": 87, "h_goal_count": 1}
+{"ts": 64, "act": "evaluated_heuristics", "count": 1}
+{"ts":64, "act": "state_update", "state_id": 88, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [63, "lift shakey room1 arm1 toy switch1", 1]}
+{"ts": 64, "act": "generated_states", "state_id": 63, "op": "lift shakey room1 arm1 toy switch1"}
+{"ts":64, "act": "state_update", "state_id": 88, "g": -1, "real_g": -1}
+{"ts": 64, "act": "evaluated_states", "state_id": 88, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 64}
+{"ts":64, "act": "state_update", "state_id": 88, "h_goal_count": 1}
+{"ts": 64, "act": "evaluated_heuristics", "count": 1}
+{"ts":64, "act": "state_update", "state_id": 89, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "0(Atom in(box, room1))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "0(Atom used(arm2))", "var8": "1(Atom carry(toy, arm2))"}, "new_parent": [63, "lift shakey room1 arm2 toy switch1", 1]}
+{"ts": 64, "act": "generated_states", "state_id": 63, "op": "lift shakey room1 arm2 toy switch1"}
+{"ts":64, "act": "state_update", "state_id": 89, "g": -1, "real_g": -1}
+{"ts": 64, "act": "evaluated_states", "state_id": 89, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 64}
+{"ts":64, "act": "state_update", "state_id": 89, "h_goal_count": 1}
+{"ts": 64, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 65}
+{"ts":65, "act": "state_update", "state_id": 64, "g": 10, "real_g": 10}
+{"ts": 65, "act": "expanded_states", "state_id": 64}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 65}
+{"ts":65, "act": "state_update", "state_id": 86, "new_parent": [64, "climb_down shakey", 1]}
+{"ts": 65, "act": "generated_states", "state_id": 64, "op": "climb_down shakey"}
+{"ts":65, "act": "state_update", "state_id": 86, "g": 11, "real_g": 11}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 66}
+{"ts":66, "act": "state_update", "state_id": 65, "g": 10, "real_g": 10}
+{"ts": 66, "act": "expanded_states", "state_id": 65}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 66}
+{"ts":66, "act": "state_update", "state_id": 48, "new_parent": [65, "climb_down shakey", 1]}
+{"ts": 66, "act": "generated_states", "state_id": 65, "op": "climb_down shakey"}
+{"ts":66, "act": "state_update", "state_id": 90, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "0(Atom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [65, "switch_on switch3 shakey room3", 1]}
+{"ts": 66, "act": "generated_states", "state_id": 65, "op": "switch_on switch3 shakey room3"}
+{"ts":66, "act": "state_update", "state_id": 90, "g": -1, "real_g": -1}
+{"ts": 66, "act": "evaluated_states", "state_id": 90, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 66}
+{"ts":66, "act": "state_update", "state_id": 90, "h_goal_count": 1}
+{"ts": 66, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 67}
+{"ts": 67, "act": "expanded_states", "state_id": 66}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 67}
+{"ts":67, "act": "state_update", "state_id": 91, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "0(Atom in(shakey, room1))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "2(Atom in(toy, room1))"}, "new_parent": [66, "move shakey room2 room1 door1", 1]}
+{"ts": 67, "act": "generated_states", "state_id": 66, "op": "move shakey room2 room1 door1"}
+{"ts":67, "act": "state_update", "state_id": 91, "g": -1, "real_g": -1}
+{"ts": 67, "act": "evaluated_states", "state_id": 91, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 67}
+{"ts":67, "act": "state_update", "state_id": 91, "h_goal_count": 1}
+{"ts": 67, "act": "evaluated_heuristics", "count": 1}
+{"ts":67, "act": "state_update", "state_id": 48, "new_parent": [66, "move shakey room2 room3 door2", 1]}
+{"ts": 67, "act": "generated_states", "state_id": 66, "op": "move shakey room2 room3 door2"}
+{"ts": 67, "act": "generated_states", "state_id": 66, "op": "move shakey room2 room3 door3"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 68}
+{"ts": 68, "act": "expanded_states", "state_id": 67}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 68}
+{"ts":68, "act": "state_update", "state_id": 53, "new_parent": [67, "move shakey room1 room2 door1", 1]}
+{"ts": 68, "act": "generated_states", "state_id": 67, "op": "move shakey room1 room2 door1"}
+{"ts":68, "act": "state_update", "state_id": 49, "new_parent": [67, "drop shakey room1 toy arm1", 1]}
+{"ts": 68, "act": "generated_states", "state_id": 67, "op": "drop shakey room1 toy arm1"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 69}
+{"ts": 69, "act": "expanded_states", "state_id": 68}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 69}
+{"ts":69, "act": "state_update", "state_id": 56, "new_parent": [68, "move shakey room1 room2 door1", 1]}
+{"ts": 69, "act": "generated_states", "state_id": 68, "op": "move shakey room1 room2 door1"}
+{"ts":69, "act": "state_update", "state_id": 49, "new_parent": [68, "drop shakey room1 toy arm2", 1]}
+{"ts": 69, "act": "generated_states", "state_id": 68, "op": "drop shakey room1 toy arm2"}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 70}
+{"ts":70, "act": "state_update", "state_id": 69, "g": 10, "real_g": 10}
+{"ts": 70, "act": "expanded_states", "state_id": 69}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 70}
+{"ts":70, "act": "state_update", "state_id": 53, "new_parent": [69, "climb_down shakey", 1]}
+{"ts": 70, "act": "generated_states", "state_id": 69, "op": "climb_down shakey"}
+{"ts":70, "act": "state_update", "state_id": 92, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "1(Atom in(box, room2))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "0(Atom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [69, "switch_on switch2 shakey room2", 1]}
+{"ts": 70, "act": "generated_states", "state_id": 69, "op": "switch_on switch2 shakey room2"}
+{"ts":70, "act": "state_update", "state_id": 92, "g": -1, "real_g": -1}
+{"ts": 70, "act": "evaluated_states", "state_id": 92, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 70}
+{"ts":70, "act": "state_update", "state_id": 92, "h_goal_count": 1}
+{"ts": 70, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 71}
+{"ts":71, "act": "state_update", "state_id": 70, "g": 10, "real_g": 10}
+{"ts": 71, "act": "expanded_states", "state_id": 70}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 71}
+{"ts":71, "act": "state_update", "state_id": 93, "state": {"var0": "1(NegatedAtom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [70, "climb_up box shakey room3", 1]}
+{"ts": 71, "act": "generated_states", "state_id": 70, "op": "climb_up box shakey room3"}
+{"ts":71, "act": "state_update", "state_id": 93, "g": -1, "real_g": -1}
+{"ts": 71, "act": "evaluated_states", "state_id": 93, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 71}
+{"ts":71, "act": "state_update", "state_id": 93, "h_goal_count": 1}
+{"ts": 71, "act": "evaluated_heuristics", "count": 1}
+{"ts":71, "act": "state_update", "state_id": 53, "new_parent": [70, "push shakey room3 room2 door3 box", 1]}
+{"ts": 71, "act": "generated_states", "state_id": 70, "op": "push shakey room3 room2 door3 box"}
+{"ts":71, "act": "state_update", "state_id": 94, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "1(Atom in(shakey, room2))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "0(Atom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "0(Atom carry(toy, arm1))"}, "new_parent": [70, "move shakey room3 room2 door2", 1]}
+{"ts": 71, "act": "generated_states", "state_id": 70, "op": "move shakey room3 room2 door2"}
+{"ts":71, "act": "state_update", "state_id": 94, "g": -1, "real_g": -1}
+{"ts": 71, "act": "evaluated_states", "state_id": 94, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 71}
+{"ts":71, "act": "state_update", "state_id": 94, "h_goal_count": 1}
+{"ts": 71, "act": "evaluated_heuristics", "count": 1}
+{"ts": 71, "act": "generated_states", "state_id": 70, "op": "move shakey room3 room2 door3"}
+{"ts":71, "act": "state_update", "state_id": 94, "g": 11, "real_g": 11}
+{"ts":71, "act": "state_update", "state_id": 95, "state": {"var0": "0(Atom on_floor(shakey))", "var1": "2(Atom in(box, room3))", "var2": "2(Atom in(shakey, room3))", "var3": "1(NegatedAtom turned_on(switch3))", "var4": "1(NegatedAtom turned_on(switch2))", "var5": "0(Atom turned_on(switch1))", "var6": "1(NegatedAtom used(arm1))", "var7": "1(NegatedAtom used(arm2))", "var8": "4(Atom in(toy, room3))"}, "new_parent": [70, "drop shakey room3 toy arm1", 1]}
+{"ts": 71, "act": "generated_states", "state_id": 70, "op": "drop shakey room3 toy arm1"}
+{"ts":71, "act": "state_update", "state_id": 95, "g": -1, "real_g": -1}
+{"ts": 71, "act": "evaluated_states", "state_id": 95, "preferred": 0}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 71}
+{"ts":71, "act": "state_update", "state_id": 95, "h_goal_count": 0}
+{"ts": 71, "act": "evaluated_heuristics", "count": 1}
+{"act": "end_group"}
+{"act": "begin_group", "ts": 72}
+{"ts":72, "act": "state_update", "state_id": 95, "g": 11, "real_g": 11}
+{"ts": 72, "act": "expanded_states", "state_id": 95}
+{"act": "end_group"}
+{"ts": 72, "act": "plan_found", "state_ids": [0, 1, 2, 4, 7, 12, 17, 28, 38, 53, 70, 95]}
