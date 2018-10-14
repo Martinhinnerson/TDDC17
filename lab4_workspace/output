@@ -1,0 +1,899 @@
+begin_version
+3
+end_version
+begin_metric
+0
+end_metric
+10
+begin_variable
+var4
+-1
+2
+Atom on_floor(shakey)
+NegatedAtom on_floor(shakey)
+end_variable
+begin_variable
+var1
+-1
+3
+Atom in(box, room1)
+Atom in(box, room2)
+Atom in(box, room3)
+end_variable
+begin_variable
+var2
+-1
+3
+Atom in(shakey, room1)
+Atom in(shakey, room2)
+Atom in(shakey, room3)
+end_variable
+begin_variable
+var7
+-1
+2
+Atom turned_on(switch3)
+NegatedAtom turned_on(switch3)
+end_variable
+begin_variable
+var6
+-1
+2
+Atom turned_on(switch2)
+NegatedAtom turned_on(switch2)
+end_variable
+begin_variable
+var5
+-1
+2
+Atom turned_on(switch1)
+NegatedAtom turned_on(switch1)
+end_variable
+begin_variable
+var0
+-1
+5
+Atom carry(toy, arm1)
+Atom carry(toy, arm2)
+Atom in(toy, room1)
+Atom in(toy, room2)
+Atom in(toy, room3)
+end_variable
+begin_variable
+var8
+-1
+2
+Atom used(arm1)
+NegatedAtom used(arm1)
+end_variable
+begin_variable
+var9
+-1
+2
+Atom used(arm2)
+NegatedAtom used(arm2)
+end_variable
+begin_variable
+var3
+0
+2
+Atom new-axiom@0()
+NegatedAtom new-axiom@0()
+end_variable
+0
+begin_state
+0
+0
+1
+1
+1
+1
+4
+1
+1
+1
+end_state
+begin_goal
+1
+9 0
+end_goal
+29
+begin_operator
+climb_down shakey
+0
+1
+0 0 1 0
+0
+end_operator
+begin_operator
+climb_up box shakey room1
+2
+1 0
+2 0
+1
+0 0 0 1
+0
+end_operator
+begin_operator
+climb_up box shakey room2
+2
+1 1
+2 1
+1
+0 0 0 1
+0
+end_operator
+begin_operator
+climb_up box shakey room3
+2
+1 2
+2 2
+1
+0 0 0 1
+0
+end_operator
+begin_operator
+drop shakey room1 toy arm1
+2
+2 0
+0 0
+2
+0 6 0 2
+0 7 -1 1
+0
+end_operator
+begin_operator
+drop shakey room1 toy arm2
+2
+2 0
+0 0
+2
+0 6 1 2
+0 8 -1 1
+0
+end_operator
+begin_operator
+drop shakey room2 toy arm1
+2
+2 1
+0 0
+2
+0 6 0 3
+0 7 -1 1
+0
+end_operator
+begin_operator
+drop shakey room2 toy arm2
+2
+2 1
+0 0
+2
+0 6 1 3
+0 8 -1 1
+0
+end_operator
+begin_operator
+drop shakey room3 toy arm1
+2
+2 2
+0 0
+2
+0 6 0 4
+0 7 -1 1
+0
+end_operator
+begin_operator
+drop shakey room3 toy arm2
+2
+2 2
+0 0
+2
+0 6 1 4
+0 8 -1 1
+0
+end_operator
+begin_operator
+lift shakey room1 arm1 toy switch1
+3
+2 0
+0 0
+5 0
+2
+0 6 2 0
+0 7 1 0
+0
+end_operator
+begin_operator
+lift shakey room1 arm2 toy switch1
+3
+2 0
+0 0
+5 0
+2
+0 6 2 1
+0 8 1 0
+0
+end_operator
+begin_operator
+lift shakey room2 arm1 toy switch2
+3
+2 1
+0 0
+4 0
+2
+0 6 3 0
+0 7 1 0
+0
+end_operator
+begin_operator
+lift shakey room2 arm2 toy switch2
+3
+2 1
+0 0
+4 0
+2
+0 6 3 1
+0 8 1 0
+0
+end_operator
+begin_operator
+lift shakey room3 arm1 toy switch3
+3
+2 2
+0 0
+3 0
+2
+0 6 4 0
+0 7 1 0
+0
+end_operator
+begin_operator
+lift shakey room3 arm2 toy switch3
+3
+2 2
+0 0
+3 0
+2
+0 6 4 1
+0 8 1 0
+0
+end_operator
+begin_operator
+move shakey room1 room2 door1
+1
+0 0
+1
+0 2 0 1
+0
+end_operator
+begin_operator
+move shakey room2 room1 door1
+1
+0 0
+1
+0 2 1 0
+0
+end_operator
+begin_operator
+move shakey room2 room3 door2
+1
+0 0
+1
+0 2 1 2
+0
+end_operator
+begin_operator
+move shakey room2 room3 door3
+1
+0 0
+1
+0 2 1 2
+0
+end_operator
+begin_operator
+move shakey room3 room2 door2
+1
+0 0
+1
+0 2 2 1
+0
+end_operator
+begin_operator
+move shakey room3 room2 door3
+1
+0 0
+1
+0 2 2 1
+0
+end_operator
+begin_operator
+push shakey room1 room2 door1 box
+1
+0 0
+2
+0 1 0 1
+0 2 0 1
+0
+end_operator
+begin_operator
+push shakey room2 room1 door1 box
+1
+0 0
+2
+0 1 1 0
+0 2 1 0
+0
+end_operator
+begin_operator
+push shakey room2 room3 door3 box
+1
+0 0
+2
+0 1 1 2
+0 2 1 2
+0
+end_operator
+begin_operator
+push shakey room3 room2 door3 box
+1
+0 0
+2
+0 1 2 1
+0 2 2 1
+0
+end_operator
+begin_operator
+switch_on switch1 shakey room1
+2
+2 0
+0 1
+1
+0 5 1 0
+0
+end_operator
+begin_operator
+switch_on switch2 shakey room2
+2
+2 1
+0 1
+1
+0 4 1 0
+0
+end_operator
+begin_operator
+switch_on switch3 shakey room3
+2
+2 2
+0 1
+1
+0 3 1 0
+0
+end_operator
+2
+begin_rule
+1
+6 0
+9 1 0
+end_rule
+begin_rule
+1
+6 1
+9 1 0
+end_rule
+begin_SG
+switch 6
+check 0
+switch 2
+check 0
+switch 0
+check 0
+check 1
+4
+check 0
+check 0
+switch 0
+check 0
+check 1
+6
+check 0
+check 0
+switch 0
+check 0
+check 1
+8
+check 0
+check 0
+check 0
+switch 2
+check 0
+switch 0
+check 0
+check 1
+5
+check 0
+check 0
+switch 0
+check 0
+check 1
+7
+check 0
+check 0
+switch 0
+check 0
+check 1
+9
+check 0
+check 0
+check 0
+switch 2
+check 0
+switch 0
+check 0
+switch 5
+check 0
+switch 7
+check 0
+check 0
+check 1
+10
+switch 8
+check 0
+check 0
+check 1
+11
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 2
+check 0
+check 0
+switch 0
+check 0
+switch 4
+check 0
+switch 7
+check 0
+check 0
+check 1
+12
+switch 8
+check 0
+check 0
+check 1
+13
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 2
+check 0
+check 0
+check 0
+switch 0
+check 0
+switch 3
+check 0
+switch 7
+check 0
+check 0
+check 1
+14
+switch 8
+check 0
+check 0
+check 1
+15
+check 0
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 1
+check 0
+switch 2
+check 0
+switch 0
+check 0
+check 2
+1
+22
+check 0
+check 0
+check 0
+check 0
+check 0
+switch 2
+check 0
+check 0
+switch 0
+check 0
+check 3
+2
+23
+24
+check 0
+check 0
+check 0
+check 0
+switch 2
+check 0
+check 0
+check 0
+switch 0
+check 0
+check 2
+3
+25
+check 0
+check 0
+check 0
+switch 2
+check 0
+switch 0
+check 0
+check 1
+16
+switch 5
+check 0
+check 0
+check 1
+26
+check 0
+check 0
+switch 0
+check 0
+check 3
+17
+18
+19
+switch 4
+check 0
+check 0
+check 1
+27
+check 0
+check 0
+switch 0
+check 0
+check 2
+20
+21
+switch 3
+check 0
+check 0
+check 1
+28
+check 0
+check 0
+switch 0
+check 0
+check 0
+check 1
+0
+check 0
+end_SG
+begin_DTG
+3
+1
+1
+2
+1 0
+2 0
+1
+2
+2
+1 1
+2 1
+1
+3
+2
+1 2
+2 2
+1
+0
+0
+0
+end_DTG
+begin_DTG
+1
+1
+22
+2
+2 0
+0 0
+2
+0
+23
+2
+2 1
+0 0
+2
+24
+2
+2 1
+0 0
+1
+1
+25
+2
+2 2
+0 0
+end_DTG
+begin_DTG
+1
+1
+16
+1
+0 0
+2
+0
+17
+1
+0 0
+2
+18
+1
+0 0
+1
+1
+20
+1
+0 0
+end_DTG
+begin_DTG
+0
+1
+0
+28
+2
+2 2
+0 1
+end_DTG
+begin_DTG
+0
+1
+0
+27
+2
+2 1
+0 1
+end_DTG
+begin_DTG
+0
+1
+0
+26
+2
+2 0
+0 1
+end_DTG
+begin_DTG
+3
+2
+4
+2
+2 0
+0 0
+3
+6
+2
+2 1
+0 0
+4
+8
+2
+2 2
+0 0
+3
+2
+5
+2
+2 0
+0 0
+3
+7
+2
+2 1
+0 0
+4
+9
+2
+2 2
+0 0
+2
+0
+10
+4
+2 0
+0 0
+5 0
+7 1
+1
+11
+4
+2 0
+0 0
+5 0
+8 1
+2
+0
+12
+4
+2 1
+0 0
+4 0
+7 1
+1
+13
+4
+2 1
+0 0
+4 0
+8 1
+2
+0
+14
+4
+2 2
+0 0
+3 0
+7 1
+1
+15
+4
+2 2
+0 0
+3 0
+8 1
+end_DTG
+begin_DTG
+3
+1
+4
+3
+6 0
+2 0
+0 0
+1
+6
+3
+6 0
+2 1
+0 0
+1
+8
+3
+6 0
+2 2
+0 0
+3
+0
+10
+4
+6 2
+2 0
+0 0
+5 0
+0
+12
+4
+6 3
+2 1
+0 0
+4 0
+0
+14
+4
+6 4
+2 2
+0 0
+3 0
+end_DTG
+begin_DTG
+3
+1
+5
+3
+6 1
+2 0
+0 0
+1
+7
+3
+6 1
+2 1
+0 0
+1
+9
+3
+6 1
+2 2
+0 0
+3
+0
+11
+4
+6 2
+2 0
+0 0
+5 0
+0
+13
+4
+6 3
+2 1
+0 0
+4 0
+0
+15
+4
+6 4
+2 2
+0 0
+3 0
+end_DTG
+begin_DTG
+0
+2
+0
+0
+1
+6 0
+0
+1
+1
+6 1
+end_DTG
+begin_CG
+8
+6 12
+1 4
+2 10
+5 1
+4 1
+3 1
+7 6
+8 6
+2
+2 4
+0 3
+8
+6 12
+1 4
+0 3
+5 1
+4 1
+3 1
+7 6
+8 6
+3
+6 2
+7 1
+8 1
+3
+6 2
+7 1
+8 1
+3
+6 2
+7 1
+8 1
+3
+9 2
+7 6
+8 6
+1
+6 3
+1
+6 3
+0
+end_CG
