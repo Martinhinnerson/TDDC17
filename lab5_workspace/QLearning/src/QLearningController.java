@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.io.*;
 import java.text.NumberFormat;
 import java.util.Hashtable;
 import java.util.Locale;
@@ -12,6 +13,12 @@ import java.util.Random;
 
 public class QLearningController extends Controller {
 	
+	// Member variables in QLearningController
+	 TestPairs pairs = new TestPairs();
+	 double sumReward = 0.0;
+	 int nrTicks = 0;
+	 int nrWrites = 0;
+	
 	/* These are the agents senses (inputs) */
 	DoubleFeature x; /* Positions */
 	DoubleFeature y;
@@ -24,7 +31,7 @@ public class QLearningController extends Controller {
 	RocketEngine middleEngine;
 	RocketEngine rightEngine;
 
-	final static int NUM_ACTIONS = 7; /* The takeAction function must be changed if this is modified */
+	final static int NUM_ACTIONS = 4; /* The takeAction function must be changed if this is modified */
 	
 	/* Keep track of the previous state and action */
 	String previous_state = null;
@@ -57,6 +64,16 @@ public class QLearningController extends Controller {
 	ComposedSpringObject cso;
 	long lastPressedExplore = 0;
 
+	public void writeToFile(String filename, String content) {
+		   try {
+		     FileOutputStream fos = new FileOutputStream(filename);
+		     fos.write(content.getBytes());
+		   } catch (Exception e) {
+		     e.printStackTrace();
+		   }
+		 }
+	
+	
 	public void init() {
 		cso = (ComposedSpringObject) object;
 		x = (DoubleFeature) cso.getObjectById("x");
@@ -82,6 +99,7 @@ public class QLearningController extends Controller {
 		middleEngine.setBursting(false);
 	}
 
+	
 	/* Performs the chosen action */
 	void performAction(int action) {
 
@@ -90,6 +108,41 @@ public class QLearningController extends Controller {
 		
 		/* TODO: IMPLEMENT THIS FUNCTION */
 		
+		resetRockets();
+		
+		switch(action) {
+		case 0:
+			resetRockets();
+			break;
+		case 1: //Forward
+			middleEngine.setBursting(true);
+			break;
+		case 2: //Right
+			rightEngine.setBursting(true);
+			break;
+		case 3://Left
+			leftEngine.setBursting(true);
+			break;
+		/*case 4://RightForward
+			middleEngine.setBursting(true);
+			rightEngine.setBursting(true);
+			break;
+		case 5://LeftForward
+			middleEngine.setBursting(true);
+			leftEngine.setBursting(true);
+			break;
+		case 6://LeftRight
+			leftEngine.setBursting(true);
+			rightEngine.setBursting(true);
+			break;				
+		case 7://All
+			leftEngine.setBursting(true);
+			middleEngine.setBursting(true);
+			rightEngine.setBursting(true);
+			break;*/	
+		}
+		
+		
 	}
 
 	/* Main decision loop. Called every iteration by the simulator */
@@ -97,14 +150,14 @@ public class QLearningController extends Controller {
 		iteration++;
 		
 		if (!paused) {
-			String new_state = StateAndReward.getStateAngle(angle.getValue(), vx.getValue(), vy.getValue());
+			String new_state = StateAndReward.getStateHover(angle.getValue(), vx.getValue(), vy.getValue());
 
 			/* Repeat the chosen action for a while, hoping to reach a new state. This is a trick to speed up learning on this problem. */
 			action_counter++;
 			if (new_state.equals(previous_state) && action_counter < REPEAT_ACTION_MAX) {
 				return;
 			}
-			double previous_reward = StateAndReward.getRewardAngle(previous_angle, previous_vx, previous_vy);
+			double previous_reward = StateAndReward.getRewardHover(previous_angle, previous_vx, previous_vy);
 			action_counter = 0;
 
 			/* The agent is in a new state, do learning and action selection */
@@ -128,6 +181,13 @@ public class QLearningController extends Controller {
 				
 				/* See top for constants and below for helper functions */
 				
+
+				//******************
+				double qVal = Qtable.get(prev_stateaction) + alpha(Ntable.get(prev_stateaction))*(previous_reward + GAMMA_DISCOUNT_FACTOR*getMaxActionQValue(new_state) - Qtable.get(prev_stateaction));
+				Qtable.put(prev_stateaction, qVal);
+				//******************
+
+
 				
 				int action = selectAction(new_state); /* Make sure you understand how it selects an action */
 
@@ -150,6 +210,25 @@ public class QLearningController extends Controller {
 			previous_state = new_state;
 		}
 
+		//Code for printout
+		/*double currentReward = StateAndReward.getRewardAngle(angle.getValue(), vx.getValue(), vy.getValue());
+		int nrTicksBeforeStat = 10000; // An example
+		 if (nrTicks >= nrTicksBeforeStat) {
+		   TestPair p = new TestPair(nrTicksBeforeStat * nrWrites, (sumReward / nrTicksBeforeStat));
+		   pairs.addPair(p);
+		   try {
+		     writeToFile("output.m", pairs.getMatlabString("steps", "result"));
+		   } catch (Exception e) {
+		     e.printStackTrace();
+		   }
+		   sumReward = currentReward;
+		   nrTicks = 0;
+		   nrWrites++;
+		 } else {
+		   nrTicks++;
+		   sumReward += currentReward;
+		 }*/
+		
 	}
 
 	/* Computes the learning rate parameter alpha based on the number of times the state-action combination has been tested */
@@ -244,3 +323,4 @@ public class QLearningController extends Controller {
 		paused = false;
 	}
 }
+

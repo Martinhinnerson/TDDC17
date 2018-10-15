@@ -1,12 +1,24 @@
 public class StateAndReward {
 
 	
+	private static int angleStates = 21;
+	private static double minAngle = -Math.PI/6;
+	private static double maxAngle = Math.PI/6;
+	
+	private static int velocityStateX = 3;
+	private static int velocityStateY = 5;
+	//velocities has to be <=1 because otherwise the reward can get negative
+	private static double minVelocityX = -.1;
+	private static double maxVelocityX = 1;
+	private static double minVelocityY = -1;
+	private static double maxVelocityY = 1;
+	
 	/* State discretization function for the angle controller */
 	public static String getStateAngle(double angle, double vx, double vy) {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
 
-		String state = "OneStateToRuleThemAll";
+		String state = "ANGLE: " + Integer.toString(discretize(angle, angleStates, minAngle, maxAngle));
 		
 		return state;
 	}
@@ -15,9 +27,14 @@ public class StateAndReward {
 	public static double getRewardAngle(double angle, double vx, double vy) {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
-		
-		double reward = 0;
 
+		double reward  = 0; //initial reward is 0, (if outside of max/min angle.
+		
+		if(angle >= minAngle && angle <= maxAngle) {
+			//reward = 1 - Math.pow(Math.abs(angle), 2); //Exponentially worse with bigger angels
+			reward = 1 - Math.abs(angle); //linearly worse with bigger angles
+		}
+		
 		return reward;
 	}
 
@@ -26,7 +43,10 @@ public class StateAndReward {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
 
-		String state = "OneStateToRuleThemAll2";
+		String vxState = " vxState: " + Integer.toString(discretize(vx, velocityStateX, minVelocityX, maxVelocityX));
+		String vyState = " vyState: " + Integer.toString(discretize(vy, velocityStateY, minVelocityY, maxVelocityY));
+		
+		String state = getStateAngle(angle,vx,vy) + vxState + vyState;
 		
 		return state;
 	}
@@ -36,8 +56,17 @@ public class StateAndReward {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
 		
-		double reward = 0;
+		double reward = getRewardAngle(angle,vx,vy);
 
+		if(vx <= maxVelocityX && vx >= minVelocityX) {
+			//reward += 1 - Math.pow(Math.abs(vx), 2);
+			reward += 1 - Math.abs(vx);
+		}
+		if(vy <= maxVelocityY && vy >= minVelocityY) { // Valocity Y seems much more important than X since angle helps X velocity.
+			//reward += 1 - Math.pow(Math.abs(vy), 2);
+			reward += 1 - Math.abs(vy);
+		}
+		
 		return reward;
 	}
 
