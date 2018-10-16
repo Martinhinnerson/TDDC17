@@ -7,21 +7,18 @@ public class StateAndReward {
 	
 	private static int velocityStatesX = 5; 
 	private static int velocityStatesY = 10;
-	
-	//velocities has to be less than the value that makes the reward function used cross the x-axis.
+	//velocities has to be <=1 because otherwise the reward can get negative
 	private static double minVelocityX = -0.5;
 	private static double maxVelocityX = 0.5;
 	private static double minVelocityY = -0.5;
 	private static double maxVelocityY = 0.5;
-	
-	private static double scaleFactor = 1; //Factor to scale the reward function
 	
 	/* State discretization function for the angle controller */
 	public static String getStateAngle(double angle, double vx, double vy) {
 
 		/* TODO: IMPLEMENT THIS FUNCTION */
 
-		String state = "angleState: " + discretize(angle, angleStates, minAngle, maxAngle);
+		String state = "ANGLE: " + discretize(angle, angleStates, minAngle, maxAngle);
 		
 		return state;
 	}
@@ -36,7 +33,7 @@ public class StateAndReward {
 		if(angle >= minAngle && angle <= maxAngle) {
 			//reward = 1 - Math.pow(Math.abs(angle), 2); //Exponentially worse with bigger angels
 			//reward = 1 - Math.abs(angle); //linearly worse with bigger angles
-			reward = 1 - scaleFactor*Math.sqrt(Math.abs(angle)); //EXPERIMENTAL
+			reward = 1 - 0.8*Math.sqrt(angle); //EXPERIMENTAL
 		}
 		
 		return reward;
@@ -65,12 +62,12 @@ public class StateAndReward {
 		if(vx <= maxVelocityX && vx >= minVelocityX) {
 			//reward += 1 - Math.pow(Math.abs(vx), 2);
 			//reward += 1 - Math.abs(vx);
-			reward += 1 - scaleFactor*Math.sqrt(Math.abs(vx));
+			reward += 1 - 0.8*Math.sqrt(vx);
 		}
 		if(vy <= maxVelocityY && vy >= minVelocityY) { // Velocity Y seems much more important than X since angle helps X velocity.
 			//reward += 1 - Math.pow(Math.abs(vy), 2);
 			//reward += 1 - Math.abs(vy);
-			reward += 1 - scaleFactor*Math.sqrt(Math.abs(vy));
+			reward += 1 - 0.8*Math.sqrt(vy);
 		}
 		
 		return reward;
