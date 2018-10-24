@@ -24,7 +24,7 @@
 		(used ?arm)						; defines if the arm is holding an object
 		(carry ?item ?arm)				; if an item is carried by a specific arm
 		(on_floor ?who)					; used to see if shakey is on the floor or on a box
-		(in ?something ?room)			; if an item or object is in a room or not
+		(in ?what ?room)			; if an item or object is in a room or not
     )
 
 	;Define actions
@@ -36,14 +36,9 @@
 	  	(adjacent ?from ?to ?door)
 	  	(in ?who ?from)
 	  	(can_move ?who)
-	  	(on_floor ?who)
-	  	(in ?item ?from)
-	  	(can_be_pushed ?item)
-	  	(wide ?door))
+	  	(on_floor ?who))
 	  :effect (and(in ?who ?to)
-	  	(not(in ?who ?from))
-	  	(in ?item ?to)
-	  	(not(in ?item ?from)))
+	  	(not(in ?who ?from)))
 	  )
 	;Functon used to climb up boxes
 	(:action climb_up
