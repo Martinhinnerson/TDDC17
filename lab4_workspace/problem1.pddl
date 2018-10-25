@@ -1,5 +1,12 @@
 (define (problem problem1)
 	
+
+;This is a problem similar to the one drawn in the lab manual on shakeys world.
+;Shakey starts in room1 and so does his toy he wants to pick up
+;Te box is places in room 3 from the beginning
+;To solve this shakey has to get the box from room 3 to room 1 to be able to turn on the light in room 1
+;shakey can then pick up the toy with either arm
+
   (:domain shakeys_world)
 
   (:objects room1 room2 room3 door1 door2 door3 switch1 switch2 switch3 shakey arm1 arm2 box toy)
@@ -25,7 +32,7 @@
 	
 	(in shakey room1)
 	(can_move shakey)
-        (on_floor shakey)
+  (on_floor shakey)
 	
 	(arm arm1)
 	(not(used arm1))
@@ -40,6 +47,6 @@
 	(can_be_carried toy)
   ) 
 
-  (:goal (in toy room3)
+  (:goal (or(carry toy arm1)(carry toy arm2))
     )
 )
