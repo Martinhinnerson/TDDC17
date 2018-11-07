@@ -18,13 +18,11 @@
 		(can_be_climbed ?item)			; only boxes can be climbed
 		(can_be_carried ?item)			; can an item be carried by shakey?
         (turned_on ?light)				; is a light on or off
-                
-		;defines shakey
 		(arm ?arm) 						; defines the arm of shakey to keep track of if it can pick up items
 		(used ?arm)						; defines if the arm is holding an object
 		(carry ?item ?arm)				; if an item is carried by a specific arm
 		(on_floor ?who)					; used to see if shakey is on the floor or on a box
-		(in ?what ?room)			; if an item or object is in a room or not
+		(in ?what ?room)				; if an item or object is in a room or not
     )
 
 	;Define actions
