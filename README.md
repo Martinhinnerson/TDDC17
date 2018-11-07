@@ -1,2 +1,2 @@
-# tddc17
+# TDDC17
 Repo for the course TDDC17 - Artificial Intelligence
